@@ -95,7 +95,7 @@ const OnboardingFlow = () => {
   const nextStep = () => {
     saveData();
     if (currentStep === TOTAL_STEPS) {
-      setShowSummary(true);
+      navigate("/jobs");
     } else {
       navigate(`/onboarding/${currentStep + 1}`);
     }
