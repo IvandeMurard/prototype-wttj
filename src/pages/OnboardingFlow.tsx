@@ -558,8 +558,7 @@ const OnboardingFlow = () => {
       case 12: // Résumé (Modal)
         return (
           <div className="space-y-6">
-            <div className="text-center mb-8">
-              <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
+            <div className="text-center mb-6">
               <h2 className="text-3xl font-bold text-foreground mb-2">Récapitulatif de votre profil</h2>
               <p className="text-muted-foreground">Vérifiez vos informations avant de finaliser</p>
             </div>
