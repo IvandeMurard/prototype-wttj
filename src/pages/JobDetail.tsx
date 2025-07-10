@@ -142,16 +142,32 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
             <Card className="mb-8">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-yellow-400 rounded flex items-center justify-center mr-3">
-                    <span className="text-black font-bold">📄</span>
-                  </div>
+                  <div className="w-1 h-6 bg-wttj-yellow mr-3"></div>
                   <h2 className="text-xl font-bold">Le poste</h2>
                 </div>
                 
                 <h3 className="font-semibold mb-4">Descriptif du poste</h3>
                 
                 <div className="text-muted-foreground space-y-4">
-                  <p>{job.description}</p>
+                  <p>Vous cherchez un environnement professionnel stimulant basé sur l'autonomie et la confiance ?</p>
+                  
+                  <p>Pennylane vous offre l'opportunité de grandir au sein d'une entreprise en pleine croissance.</p>
+                  
+                  <p>Ici, votre expertise contribuera directement à aider les entrepreneurs à reprendre le contrôle de leurs finances. Découvrez un lieu où vos compétences seront valorisées et où vous pourrez façonner l'avenir de la gestion financière.</p>
+                  
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Notre vision</h4>
+                    <p>Notre ambition est de devenir le logiciel de pilotage financier préféré des PMEs européennes.</p>
+                  </div>
+                  
+                  <p>Nous aidons les entrepreneurs à se débarrasser des tâches chronophages liées à la comptabilité et à la finance, tout en leur donnant accès à des informations financières clés pour les aider à prendre les meilleures décisions pour leur entreprise.</p>
+                  
+                  <p>Parallèlement, nous aidons les cabinets d'expertise-comptable, en leur permettant de passer moins de temps sur des tâches redondantes et répétitives, et plus de temps sur la partie conseil et accompagnement de leurs clients.</p>
+                  
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">À propos de Pennylane</h4>
+                    <p>Pennylane est une des FinTech à la plus forte croissance en France, et souhaite bientôt adresser le marché...</p>
+                  </div>
                   
                   {!showFullDescription && (
                     <Button 
@@ -166,13 +182,9 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                   {showFullDescription && (
                     <>
                       <div className="space-y-4">
-                        <div>
-                          <p className="font-medium mb-2">• <strong>Expertise :</strong> Daveo est un pure player du product management, de la tech et du cloud public AWS et GCP. L'entreprise est présente dans plusieurs villes, dont <strong>Paris, Lille, Lyon, Bordeaux et Nantes</strong>.</p>
-                        </div>
-                        <div>
-                          <p className="font-medium mb-2">• <strong>Accompagnement à 360° :</strong> Daveo propose un accompagnement complet à ses clients, en mettant en avant ses compétences en matière d'innovation, de technologie et de gestion de produits.</p>
-                        </div>
-                        <p>En somme, Daveo est un acteur dynamique qui allie expertise...</p>
+                        <p>européen. Nous sommes convaincus que la technologie peut transformer radicalement la façon dont les entreprises gèrent leurs finances.</p>
+                        
+                        <p>Rejoindre Pennylane, c'est intégrer une équipe passionnée qui révolutionne le secteur de la comptabilité grâce à l'innovation et à l'automatisation intelligente.</p>
                       </div>
                       
                       <Button 
