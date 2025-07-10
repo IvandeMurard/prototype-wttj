@@ -805,14 +805,14 @@ const OnboardingFlow = () => {
               </div>
               <Button 
                 onClick={nextStep}
-                className="bg-wttj-yellow text-black hover:bg-wttj-yellow-dark px-8"
+                className="bg-black text-white hover:bg-gray-800 px-8"
                 disabled={isRequired && (
                   (currentStep === 1 && !formData.localisation) ||
                   (currentStep === 2 && !formData.typePoste) ||
                   (currentStep === 3 && !formData.experience)
                 )}
               >
-                {currentStep === TOTAL_STEPS ? "Terminer" : "Valider"}
+                {currentStep === TOTAL_STEPS ? "Finaliser et voir les offres" : "Valider"}
               </Button>
             </div>
           </div>
