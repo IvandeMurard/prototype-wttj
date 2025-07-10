@@ -121,16 +121,33 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Explorez les entreprises section */}
-      <section className="py-20 bg-wttj-gray-light">
+      {/* The job is yours section */}
+      <section className="py-20 bg-wttj-yellow">
         <div className="container mx-auto px-4">
-          <div className="text-center space-y-4">
-            <h3 className="text-4xl font-bold text-foreground">
-              Explorez les entreprises
+          <div className="text-center space-y-6">
+            <h3 className="text-5xl lg:text-6xl font-bold text-foreground">
+              THE JOB IS YOURS
             </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Découvrez leur histoire, rencontrez leurs équipes, comprenez leur culture.
+              Plus de 83742 jobs vous attendent, trouvez celui fait pour vous.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mt-8">
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Input 
+                  placeholder="Cherchez un job par intitulé de poste, mot-clé ou entreprise" 
+                  className="pl-10 h-12 text-base"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+              <Button 
+                size="lg" 
+                className="bg-foreground text-background hover:bg-foreground/90 h-12 px-8"
+              >
+                Trouver un job
+              </Button>
+            </div>
           </div>
         </div>
       </section>
