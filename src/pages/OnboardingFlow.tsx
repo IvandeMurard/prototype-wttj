@@ -18,11 +18,11 @@ interface OnboardingData {
   typePoste: string;
   experience: string;
   salaire: { montant: string; devise: string };
-  teletravail: string;
+  teletravail: string[];
   langues: string[];
   visa: boolean;
-  tailleEntreprise: string;
-  secteurActivite: string;
+  tailleEntreprise: string[];
+  secteurActivite: string[];
   technologies: string[];
   nom: string;
   email: string;
@@ -63,11 +63,11 @@ const OnboardingFlow = () => {
       typePoste: "",
       experience: "",
       salaire: { montant: "", devise: "€" },
-      teletravail: "",
+      teletravail: [],
       langues: [],
       visa: false,
-      tailleEntreprise: "",
-      secteurActivite: "",
+      tailleEntreprise: [],
+      secteurActivite: [],
       technologies: [],
       nom: "",
       email: "",
@@ -228,30 +228,31 @@ const OnboardingFlow = () => {
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-2">Télétravail</h2>
-              <p className="text-muted-foreground">Quelle est votre préférence ?</p>
+              <p className="text-muted-foreground">Quelles sont vos préférences ? (Plusieurs choix possibles)</p>
             </div>
-            <RadioGroup
-              value={formData.teletravail}
-              onValueChange={(value) => updateFormData("teletravail", value)}
-              className="space-y-4"
-            >
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="full-remote" id="full-remote" />
-                <Label htmlFor="full-remote">100% télétravail</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="hybrid" id="hybrid" />
-                <Label htmlFor="hybrid">Hybride (2-3 jours/semaine)</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="onsite" id="onsite" />
-                <Label htmlFor="onsite">Présentiel uniquement</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="flexible" id="flexible" />
-                <Label htmlFor="flexible">Flexible</Label>
-              </div>
-            </RadioGroup>
+            <div className="space-y-4">
+              {[
+                { value: "full-remote", label: "100% télétravail" },
+                { value: "hybrid", label: "Hybride (2-3 jours/semaine)" },
+                { value: "onsite", label: "Présentiel uniquement" },
+                { value: "flexible", label: "Flexible" }
+              ].map((option) => (
+                <div key={option.value} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={option.value}
+                    checked={formData.teletravail.includes(option.value)}
+                    onCheckedChange={(checked) => {
+                      if (checked) {
+                        updateFormData("teletravail", [...formData.teletravail, option.value]);
+                      } else {
+                        updateFormData("teletravail", formData.teletravail.filter(t => t !== option.value));
+                      }
+                    }}
+                  />
+                  <Label htmlFor={option.value}>{option.label}</Label>
+                </div>
+              ))}
+            </div>
           </div>
         );
 
@@ -303,30 +304,31 @@ const OnboardingFlow = () => {
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-2">Taille d'entreprise privilégiée</h2>
-              <p className="text-muted-foreground">Dans quel type d'entreprise souhaitez-vous évoluer ?</p>
+              <p className="text-muted-foreground">Dans quels types d'entreprise souhaitez-vous évoluer ? (Plusieurs choix possibles)</p>
             </div>
-            <RadioGroup
-              value={formData.tailleEntreprise}
-              onValueChange={(value) => updateFormData("tailleEntreprise", value)}
-              className="space-y-4"
-            >
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="startup" id="startup" />
-                <Label htmlFor="startup">Startup (1-50 employés)</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="scale-up" id="scale-up" />
-                <Label htmlFor="scale-up">Scale-up (51-250 employés)</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="medium" id="medium" />
-                <Label htmlFor="medium">Entreprise moyenne (251-1000 employés)</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="large" id="large" />
-                <Label htmlFor="large">Grande entreprise (1000+ employés)</Label>
-              </div>
-            </RadioGroup>
+            <div className="space-y-4">
+              {[
+                { value: "startup", label: "Startup (1-50 employés)" },
+                { value: "scale-up", label: "Scale-up (51-250 employés)" },
+                { value: "medium", label: "Entreprise moyenne (251-1000 employés)" },
+                { value: "large", label: "Grande entreprise (1000+ employés)" }
+              ].map((option) => (
+                <div key={option.value} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={option.value}
+                    checked={formData.tailleEntreprise.includes(option.value)}
+                    onCheckedChange={(checked) => {
+                      if (checked) {
+                        updateFormData("tailleEntreprise", [...formData.tailleEntreprise, option.value]);
+                      } else {
+                        updateFormData("tailleEntreprise", formData.tailleEntreprise.filter(t => t !== option.value));
+                      }
+                    }}
+                  />
+                  <Label htmlFor={option.value}>{option.label}</Label>
+                </div>
+              ))}
+            </div>
           </div>
         );
 
@@ -335,30 +337,39 @@ const OnboardingFlow = () => {
           <div className="space-y-6">
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-2">Secteur d'activité privilégié</h2>
-              <p className="text-muted-foreground">Dans quel secteur voulez-vous travailler ?</p>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Secteurs d'activité privilégiés</h2>
+              <p className="text-muted-foreground">Dans quels secteurs voulez-vous travailler ? (Plusieurs choix possibles)</p>
             </div>
             <div className="space-y-4">
-              <Label htmlFor="secteur">Secteur d'activité</Label>
-              <Select
-                value={formData.secteurActivite}
-                onValueChange={(value) => updateFormData("secteurActivite", value)}
-              >
-                <SelectTrigger className="h-12">
-                  <SelectValue placeholder="Sélectionnez un secteur" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="tech">Tech / Software</SelectItem>
-                  <SelectItem value="fintech">Fintech</SelectItem>
-                  <SelectItem value="ecommerce">E-commerce</SelectItem>
-                  <SelectItem value="healthtech">Healthtech</SelectItem>
-                  <SelectItem value="edtech">Edtech</SelectItem>
-                  <SelectItem value="media">Média / Communication</SelectItem>
-                  <SelectItem value="consulting">Consulting</SelectItem>
-                  <SelectItem value="industry">Industrie</SelectItem>
-                  <SelectItem value="other">Autre</SelectItem>
-                </SelectContent>
-              </Select>
+              <Label>Secteurs d'activité</Label>
+              <div className="space-y-4">
+                {[
+                  { value: "tech", label: "Tech / Software" },
+                  { value: "fintech", label: "Fintech" },
+                  { value: "ecommerce", label: "E-commerce" },
+                  { value: "healthtech", label: "Healthtech" },
+                  { value: "edtech", label: "Edtech" },
+                  { value: "media", label: "Média / Communication" },
+                  { value: "consulting", label: "Consulting" },
+                  { value: "industry", label: "Industrie" },
+                  { value: "other", label: "Autre" }
+                ].map((option) => (
+                  <div key={option.value} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={option.value}
+                      checked={formData.secteurActivite.includes(option.value)}
+                      onCheckedChange={(checked) => {
+                        if (checked) {
+                          updateFormData("secteurActivite", [...formData.secteurActivite, option.value]);
+                        } else {
+                          updateFormData("secteurActivite", formData.secteurActivite.filter(s => s !== option.value));
+                        }
+                      }}
+                    />
+                    <Label htmlFor={option.value}>{option.label}</Label>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         );
@@ -474,19 +485,26 @@ const OnboardingFlow = () => {
               <p className="text-muted-foreground">Créez votre compte</p>
             </div>
             <div className="space-y-6">
-              <Button 
-                variant="outline" 
-                className="w-full h-12 border-2 hover:bg-wttj-yellow/10"
-                onClick={() => {/* Google sign-in interface only */}}
-              >
-                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                  <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-                Continuer avec Google
-              </Button>
+              <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <Button 
+                  variant="outline" 
+                  className="w-full h-14 border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 transition-colors"
+                  onClick={() => {/* Google sign-in interface only */}}
+                >
+                  <div className="flex items-center justify-center">
+                    <svg className="w-6 h-6 mr-3" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <span className="text-gray-700 font-medium">Continuer avec Google</span>
+                  </div>
+                </Button>
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  Connexion rapide et sécurisée
+                </p>
+              </div>
               
               <div className="text-center text-muted-foreground">ou</div>
               
@@ -618,7 +636,7 @@ const OnboardingFlow = () => {
                     <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
                   </div>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium">Préférence:</span> {formData.teletravail}</p>
+                    <p><span className="font-medium">Préférences:</span> {formData.teletravail.join(", ")}</p>
                   </div>
                 </div>
               </div>
@@ -644,7 +662,7 @@ const OnboardingFlow = () => {
                     <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
                   </div>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium">Préférence:</span> {formData.tailleEntreprise}</p>
+                    <p><span className="font-medium">Préférences:</span> {formData.tailleEntreprise.join(", ")}</p>
                   </div>
                 </div>
 
@@ -657,7 +675,7 @@ const OnboardingFlow = () => {
                     <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
                   </div>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium">Secteur:</span> {formData.secteurActivite}</p>
+                    <p><span className="font-medium">Secteurs:</span> {formData.secteurActivite.join(", ")}</p>
                   </div>
                 </div>
               </div>
@@ -722,7 +740,7 @@ const OnboardingFlow = () => {
         <div className="max-w-2xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between mb-4">
             {currentStep > 1 && (
-              <Button variant="ghost" size="sm" onClick={prevStep}>
+              <Button variant="ghost" size="sm" onClick={prevStep} className="border border-black/20 hover:border-black/40">
                 <ChevronLeft className="h-4 w-4 mr-1" />
                 Retour
               </Button>
