@@ -31,7 +31,7 @@ const Jobs = () => {
       location: "Carquefou",
       type: "Télétravail fréquent",
       salary: "47K à 55K €",
-      image: "/lovable-uploads/3daf6cc6-782b-406b-ba04-b92c9ec65dc4.png",
+      image: "/lovable-uploads/46fd2216-609c-4ef8-ae17-3e6b9fa9616c.png",
       postedDate: "Il y a 14 jours",
       isLiked: false,
       hasApplied: false
@@ -43,7 +43,7 @@ const Jobs = () => {
       location: "Nantes",
       type: "Télétravail fréquent",
       salary: "40K à 44K €",
-      image: "/lovable-uploads/b4b2cadc-f54e-470f-9c50-8d43e5fe90e6.png",
+      image: "/lovable-uploads/32039a4f-d472-4a6a-9f21-5f5524aab575.png",
       postedDate: "Il y a 15 jours",
       isLiked: false,
       hasApplied: false
@@ -55,7 +55,7 @@ const Jobs = () => {
       location: "Nantes",
       type: "Télétravail fréquent",
       salary: "",
-      image: "/lovable-uploads/f2161f4e-5f19-410a-b01f-03c579527f9f.png",
+      image: "/lovable-uploads/cf85496b-1954-495f-998d-db53dbcfcd98.png",
       postedDate: "Il y a 16 jours",
       isLiked: false,
       hasApplied: false,
