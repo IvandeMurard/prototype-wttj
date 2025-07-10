@@ -71,51 +71,53 @@ const Home = () => {
               />
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-6 text-center">
               <h2 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 PROFIL TECH 5+ ANS<br />
                 D'EXPÉRIENCE
               </h2>
-              <p className="text-lg text-muted-foreground max-w-md">
+              <p className="text-lg text-muted-foreground mx-auto max-w-md">
                 Il est temps de viser plus haut.<br />
                 Découvrez des opportunités taillées pour les profils expérimentés.
               </p>
               
-              <Modal>
-                <ModalTrigger asChild>
-                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3">
-                    Voir les opportunités
-                  </Button>
-                </ModalTrigger>
-                <ModalContent className="sm:max-w-md">
-                  <ModalHeader>
-                    <ModalTitle className="text-2xl font-bold text-center">
-                      PROFIL TECH 5+ ANS<br />
-                      D'EXPÉRIENCE
-                    </ModalTitle>
-                    <ModalDescription className="text-center text-muted-foreground mt-4">
-                      Il est temps de viser plus haut.<br />
-                      Découvrez des opportunités taillées pour les profils expérimentés.
-                    </ModalDescription>
-                  </ModalHeader>
-                  <div className="space-y-4 mt-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Poste recherché</label>
-                      <Input placeholder="Ex: Développeur Senior, Lead Tech..." />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Localisation</label>
-                      <div className="relative">
-                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                        <Input placeholder="Ville ou région" className="pl-10" />
-                      </div>
-                    </div>
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                      Découvrir les opportunités
+              <div className="flex justify-center">
+                <Modal>
+                  <ModalTrigger asChild>
+                    <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3">
+                      Voir les opportunités
                     </Button>
-                  </div>
-                </ModalContent>
-              </Modal>
+                  </ModalTrigger>
+                  <ModalContent className="sm:max-w-md">
+                    <ModalHeader>
+                      <ModalTitle className="text-2xl font-bold text-center">
+                        PROFIL TECH 5+ ANS<br />
+                        D'EXPÉRIENCE
+                      </ModalTitle>
+                      <ModalDescription className="text-center text-muted-foreground mt-4">
+                        Il est temps de viser plus haut.<br />
+                        Découvrez des opportunités taillées pour les profils expérimentés.
+                      </ModalDescription>
+                    </ModalHeader>
+                    <div className="space-y-4 mt-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">Poste recherché</label>
+                        <Input placeholder="Ex: Développeur Senior, Lead Tech..." />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">Localisation</label>
+                        <div className="relative">
+                          <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                          <Input placeholder="Ville ou région" className="pl-10" />
+                        </div>
+                      </div>
+                      <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                        Découvrir les opportunités
+                      </Button>
+                    </div>
+                  </ModalContent>
+                </Modal>
+              </div>
             </div>
           </div>
         </div>
