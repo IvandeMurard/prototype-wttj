@@ -25,7 +25,7 @@ const Home = () => {
                 />
               </div>
               <nav className="hidden md:flex space-x-6">
-                <Link to="/jobs" className="text-foreground hover:text-muted-foreground transition-colors font-medium">
+                <Link to="/job-offers" className="text-foreground hover:text-muted-foreground transition-colors font-medium">
                   Trouver un job
                 </Link>
                 <Link to="#" className="text-foreground hover:text-muted-foreground transition-colors font-medium">
@@ -119,8 +119,11 @@ const Home = () => {
               <Button 
                 size="lg" 
                 className="bg-foreground text-background hover:bg-foreground/90 h-12 px-8"
+                asChild
               >
-                Trouver un job
+                <Link to="/job-offers">
+                  Trouver un job
+                </Link>
               </Button>
             </div>
           </div>
