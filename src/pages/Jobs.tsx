@@ -29,7 +29,7 @@ const Jobs = () => {
       type: "Télétravail partiel",
       salary: "€50-85k",
       level: "Senior level",
-      image: "/lovable-uploads/46fd2216-609c-4ef8-ae17-3e6b9fa9616c.png",
+      image: "/lovable-uploads/b51adb95-49e7-4d3f-befc-f77ca0de7382.png",
       postedDate: "Il y a 14 jours",
       isLiked: false,
       hasApplied: false

@@ -91,9 +91,11 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
             <Card className="bg-white">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">p</span>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/b51adb95-49e7-4d3f-befc-f77ca0de7382.png"
+                    alt="Pennylane logo"
+                    className="w-12 h-12 rounded-full"
+                  />
                   <div>
                     <h3 className="font-bold text-lg">{job.company}</h3>
                   </div>
@@ -255,9 +257,11 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                 </div>
                 
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">p</span>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/b51adb95-49e7-4d3f-befc-f77ca0de7382.png"
+                    alt="Pennylane logo"
+                    className="w-12 h-12 rounded-full"
+                  />
                   <div>
                     <h3 className="font-bold text-lg">PENNYLANE</h3>
                   </div>
