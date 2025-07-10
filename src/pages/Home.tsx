@@ -119,8 +119,11 @@ const Home = () => {
               <Button 
                 size="lg" 
                 className="bg-foreground text-background hover:bg-foreground/90 h-12 px-8"
+                asChild
               >
-                Trouver un job
+                <Link to="/jobs">
+                  Trouver un job
+                </Link>
               </Button>
             </div>
           </div>
