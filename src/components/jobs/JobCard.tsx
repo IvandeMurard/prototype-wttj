@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Eye, Heart } from "lucide-react";
+import { MapPin, Share, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -62,10 +62,10 @@ const JobCard = ({ job }: JobCardProps) => {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <Button variant="ghost" size="sm">
-                  <Eye className="h-4 w-4" />
+                  <Heart className={`h-4 w-4 ${job.isLiked ? 'fill-red-500 text-red-500' : ''}`} />
                 </Button>
                 <Button variant="ghost" size="sm">
-                  <Heart className={`h-4 w-4 ${job.isLiked ? 'fill-red-500 text-red-500' : ''}`} />
+                  <Share className="h-4 w-4" />
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">{job.postedDate}</p>
