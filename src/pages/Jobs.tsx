@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, Filter, MapPin, Heart, Eye, Users, X, MessageSquare, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,11 +27,12 @@ const Jobs = () => {
   const jobs = [
     {
       id: 1,
-      title: "Product Manager Senior (H/F)",
-      company: "U TECH",
+      title: "Product Manager",
+      company: "pennylane", 
       location: "Paris",
-      type: "Télétravail fréquent",
-      salary: "65K à 80K €",
+      type: "Télétravail partiel",
+      salary: "€50-85k",
+      level: "Senior level",
       image: "/lovable-uploads/46fd2216-609c-4ef8-ae17-3e6b9fa9616c.png",
       postedDate: "Il y a 14 jours",
       isLiked: false,
@@ -159,53 +161,55 @@ const Jobs = () => {
       {/* Jobs Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {jobs.map((job) => (
+            {jobs.map((job) => (
             <Card key={job.id} className="hover:shadow-lg transition-all duration-300 cursor-pointer group">
               <CardContent className="p-0">
-                <div className="relative">
-                  <img 
-                    src={job.image} 
-                    alt={`${job.company} office`}
-                    className="w-full h-48 object-cover rounded-t-lg"
-                  />
-                  {job.isViewed && (
-                    <Badge className="absolute top-2 right-2 bg-muted text-muted-foreground">
-                      Déjà vu
-                    </Badge>
-                  )}
-                </div>
-                
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
-                    {job.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-2">{job.company}</p>
-                  
-                  <div className="flex items-center text-sm text-muted-foreground mb-2">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    {job.location}
-                    <span className="mx-2">•</span>
-                    {job.type}
+                <Link to={`/job/${job.id}`}>
+                  <div className="relative">
+                    <img 
+                      src={job.image} 
+                      alt={`${job.company} office`}
+                      className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    {job.isViewed && (
+                      <Badge className="absolute top-2 right-2 bg-muted text-muted-foreground">
+                        Déjà vu
+                      </Badge>
+                    )}
                   </div>
                   
-                  {job.salary && (
-                    <div className="flex items-center text-sm font-medium mb-3">
-                      💰 {job.salary}
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
+                      {job.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-2">{job.company}</p>
+                    
+                    <div className="flex items-center text-sm text-muted-foreground mb-2">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      {job.location}
+                      <span className="mx-2">•</span>
+                      {job.type}
                     </div>
-                  )}
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Heart className={`h-4 w-4 ${job.isLiked ? 'fill-red-500 text-red-500' : ''}`} />
-                      </Button>
+                    
+                    {job.salary && (
+                      <div className="flex items-center text-sm font-medium mb-3">
+                        💰 {job.salary}
+                      </div>
+                    )}
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <Button variant="ghost" size="sm">
+                          <Eye className="h-4 w-4" />
+                        </Button>
+                        <Button variant="ghost" size="sm">
+                          <Heart className={`h-4 w-4 ${job.isLiked ? 'fill-red-500 text-red-500' : ''}`} />
+                        </Button>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{job.postedDate}</p>
                     </div>
-                    <p className="text-xs text-muted-foreground">{job.postedDate}</p>
                   </div>
-                </div>
+                </Link>
               </CardContent>
             </Card>
           ))}
