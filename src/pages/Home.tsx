@@ -18,12 +18,11 @@ const Home = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground text-xs font-bold">W</span>
-                </div>
-                <h1 className="text-xl font-bold text-foreground">
-                  Welcome to the Jungle
-                </h1>
+                <img 
+                  src="/lovable-uploads/b4b2cadc-f54e-470f-9c50-8d43e5fe90e6.png" 
+                  alt="Welcome to the Jungle"
+                  className="h-8 w-auto"
+                />
               </div>
               <nav className="hidden md:flex space-x-6">
                 <Link to="/jobs" className="text-foreground hover:text-muted-foreground transition-colors font-medium">
