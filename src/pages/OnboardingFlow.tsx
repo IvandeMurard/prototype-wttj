@@ -560,196 +560,147 @@ const OnboardingFlow = () => {
           <div className="space-y-6">
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-2">Récapitulatif</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Récapitulatif de votre profil</h2>
               <p className="text-muted-foreground">Vérifiez vos informations avant de finaliser</p>
             </div>
-            <div className="text-center">
-              <Modal open={showSummary} onOpenChange={setShowSummary}>
-                <ModalTrigger asChild>
-                  <Button className="bg-wttj-yellow text-black hover:bg-wttj-yellow-dark">
-                    Voir le résumé complet
-                  </Button>
-                </ModalTrigger>
-                <ModalContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                  <ModalHeader>
-                    <ModalTitle>Résumé de votre profil</ModalTitle>
-                  </ModalHeader>
-                   <div className="space-y-6 p-6">
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/10");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Informations générales</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="space-y-2 text-sm">
-                           <p><span className="font-medium">Nom:</span> {formData.nom}</p>
-                           <p><span className="font-medium">Email:</span> {formData.email}</p>
-                           <p><span className="font-medium">Téléphone:</span> {formData.telephone}</p>
-                           <p><span className="font-medium">Localisation:</span> {formData.localisation}</p>
-                         </div>
-                       </div>
-                       
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/2");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Type de poste</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="space-y-2 text-sm">
-                           <p><span className="font-medium">Type de poste:</span> {formData.typePoste}</p>
-                         </div>
-                       </div>
-                     </div>
-
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/4");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Salaire</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="space-y-2 text-sm">
-                           <p><span className="font-medium">Salaire:</span> {formData.salaire.montant} {formData.salaire.devise}</p>
-                         </div>
-                       </div>
-
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/5");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Télétravail</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="space-y-2 text-sm">
-                           <p><span className="font-medium">Préférence:</span> {formData.teletravail}</p>
-                         </div>
-                       </div>
-                     </div>
-                     
-                     <div 
-                       className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                       onClick={() => {
-                         setShowSummary(false);
-                         navigate("/onboarding/3");
-                       }}
-                     >
-                       <div className="flex items-center justify-between mb-2">
-                         <h3 className="font-semibold text-lg">Expérience</h3>
-                         <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                       </div>
-                       <p className="text-sm">{formData.experience} années d'expérience</p>
-                     </div>
-
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/7");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Taille entreprise</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="space-y-2 text-sm">
-                           <p><span className="font-medium">Préférence:</span> {formData.tailleEntreprise}</p>
-                         </div>
-                       </div>
-
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/8");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Secteur d'activité</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="space-y-2 text-sm">
-                           <p><span className="font-medium">Secteur:</span> {formData.secteurActivite}</p>
-                         </div>
-                       </div>
-                     </div>
-                     
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/6");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Langues</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="flex flex-wrap gap-1">
-                           {formData.langues.map((langue) => (
-                             <span key={langue} className="bg-wttj-yellow/20 px-2 py-1 rounded text-xs">
-                               {langue}
-                             </span>
-                           ))}
-                         </div>
-                         {formData.visa && (
-                           <p className="text-xs text-muted-foreground mt-2">Besoin d'un visa de travail</p>
-                         )}
-                       </div>
-                       
-                       <div 
-                         className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
-                         onClick={() => {
-                           setShowSummary(false);
-                           navigate("/onboarding/9");
-                         }}
-                       >
-                         <div className="flex items-center justify-between mb-2">
-                           <h3 className="font-semibold text-lg">Technologies</h3>
-                           <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
-                         </div>
-                         <div className="flex flex-wrap gap-1">
-                           {formData.technologies.map((tech) => (
-                             <span key={tech} className="bg-wttj-yellow/20 px-2 py-1 rounded text-xs">
-                               {tech}
-                             </span>
-                           ))}
-                         </div>
-                       </div>
-                     </div>
-                     
-                     <div className="flex justify-center pt-6">
-                       <Button 
-                         className="bg-black text-white hover:bg-gray-800 px-8"
-                         onClick={() => navigate("/jobs")}
-                       >
-                         Finaliser et voir les offres
-                       </Button>
-                     </div>
+            
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/10")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Informations générales</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
                   </div>
-                </ModalContent>
-              </Modal>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Nom:</span> {formData.nom}</p>
+                    <p><span className="font-medium">Email:</span> {formData.email}</p>
+                    <p><span className="font-medium">Téléphone:</span> {formData.telephone}</p>
+                    <p><span className="font-medium">Localisation:</span> {formData.localisation}</p>
+                  </div>
+                </div>
+                
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/2")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Type de poste</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Type de poste:</span> {formData.typePoste}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/4")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Salaire</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Salaire:</span> {formData.salaire.montant} {formData.salaire.devise}</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/5")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Télétravail</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Préférence:</span> {formData.teletravail}</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div 
+                className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                onClick={() => navigate("/onboarding/3")}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-semibold text-lg">Expérience</h3>
+                  <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                </div>
+                <p className="text-sm">{formData.experience} années d'expérience</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/7")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Taille entreprise</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Préférence:</span> {formData.tailleEntreprise}</p>
+                  </div>
+                </div>
+
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/8")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Secteur d'activité</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p><span className="font-medium">Secteur:</span> {formData.secteurActivite}</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/6")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Langues</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {formData.langues.map((langue) => (
+                      <span key={langue} className="bg-wttj-yellow/20 px-2 py-1 rounded text-xs">
+                        {langue}
+                      </span>
+                    ))}
+                  </div>
+                  {formData.visa && (
+                    <p className="text-xs text-muted-foreground mt-2">Besoin d'un visa de travail</p>
+                  )}
+                </div>
+                
+                <div 
+                  className="p-4 rounded-lg border border-border hover:border-wttj-yellow hover:bg-wttj-yellow/5 cursor-pointer transition-all group"
+                  onClick={() => navigate("/onboarding/9")}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-lg">Technologies</h3>
+                    <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {formData.technologies.map((tech) => (
+                      <span key={tech} className="bg-wttj-yellow/20 px-2 py-1 rounded text-xs">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         );
