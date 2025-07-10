@@ -738,21 +738,15 @@ const OnboardingFlow = () => {
                          </div>
                        </div>
                      </div>
-                    
-                    <div className="flex gap-4 pt-6">
+                     
+                     <div className="flex justify-center pt-6">
                        <Button 
-                         className="flex-1 bg-black text-white hover:bg-gray-800"
+                         className="bg-black text-white hover:bg-gray-800 px-8"
                          onClick={() => navigate("/jobs")}
                        >
                          Finaliser et voir les offres
                        </Button>
-                      <Button 
-                        variant="outline" 
-                        onClick={() => setShowSummary(false)}
-                      >
-                        Modifier
-                      </Button>
-                    </div>
+                     </div>
                   </div>
                 </ModalContent>
               </Modal>
