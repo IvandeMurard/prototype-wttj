@@ -56,9 +56,9 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
           </Button>
 
           {/* Job Header Card */}
-          <div className="grid lg:grid-cols-2 gap-6 items-start">
+          <div className="grid lg:grid-cols-[1fr_1px_1fr] gap-0 items-start max-w-5xl mx-auto">
             {/* Left Column - Job Info */}
-            <div className="space-y-4 lg:border-r lg:border-gray-200 lg:pr-6">
+            <div className="space-y-4 lg:pr-8">
               <h1 className="text-4xl font-bold text-black mb-6">{job.title}</h1>
               
               <div className="flex items-center space-x-2 mb-4">
@@ -83,50 +83,55 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
               <div className="text-black font-medium">{job.workType}</div>
             </div>
 
+            {/* Vertical separator */}
+            <div className="hidden lg:block w-px bg-gray-200 self-stretch"></div>
+
             {/* Right Column - Company Info */}
-            <Card className="bg-white">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-4">
-                  <img 
-                    src="/lovable-uploads/b51adb95-49e7-4d3f-befc-f77ca0de7382.png"
-                    alt="Pennylane logo"
-                    className="w-12 h-12 rounded-full"
-                  />
-                  <div>
-                    <h3 className="font-bold text-lg">{job.company}</h3>
+            <div className="lg:pl-8">
+              <Card className="bg-white">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <img 
+                      src="/lovable-uploads/b51adb95-49e7-4d3f-befc-f77ca0de7382.png"
+                      alt="Pennylane logo"
+                      className="w-12 h-12 rounded-full"
+                    />
+                    <div>
+                      <h3 className="font-bold text-lg">{job.company}</h3>
+                    </div>
                   </div>
-                </div>
-                
-                <p className="text-sm text-muted-foreground mb-4">{job.companyDescription}</p>
-                
-                <div className="flex items-center text-sm text-muted-foreground mb-4">
-                  <Users className="h-4 w-4 mr-2" />
-                  {job.employees}
-                </div>
+                  
+                  <p className="text-sm text-muted-foreground mb-4">{job.companyDescription}</p>
+                  
+                  <div className="flex items-center text-sm text-muted-foreground mb-4">
+                    <Users className="h-4 w-4 mr-2" />
+                    {job.employees}
+                  </div>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {job.tags.map((tag, index) => (
-                    <Badge 
-                      key={tag} 
-                      variant="secondary" 
-                      className={`text-xs ${index === 0 ? 'bg-green-500 text-white' : ''}`}
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {job.tags.map((tag, index) => (
+                      <Badge 
+                        key={tag} 
+                        variant="secondary" 
+                        className={`text-xs ${index === 0 ? 'bg-green-500 text-white' : ''}`}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
 
-                <div className="space-y-3">
-                  <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                    Ouvert aux candidatures
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    <Star className="h-4 w-4 mr-2" />
-                    Suivre {job.company}
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="space-y-3">
+                    <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                      Ouvert aux candidatures
+                    </Button>
+                    <Button variant="outline" className="w-full">
+                      <Star className="h-4 w-4 mr-2" />
+                      Suivre {job.company}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
