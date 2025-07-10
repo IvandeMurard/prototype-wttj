@@ -63,6 +63,14 @@ const Home = () => {
       <section className="py-20 bg-wttj-yellow relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center lg:justify-start">
+              <img 
+                src={heroIllustration} 
+                alt="Illustration équipe tech" 
+                className="w-full max-w-md h-auto"
+              />
+            </div>
+            
             <div className="space-y-6">
               <h2 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 PROFIL TECH 5+ ANS<br />
@@ -109,22 +117,7 @@ const Home = () => {
                 </ModalContent>
               </Modal>
             </div>
-            
-            <div className="flex justify-center lg:justify-end">
-              <img 
-                src={heroIllustration} 
-                alt="Illustration équipe tech" 
-                className="w-full max-w-md h-auto"
-              />
-            </div>
           </div>
-        </div>
-        
-        {/* Close button positioned like in mockup */}
-        <div className="absolute top-6 right-6">
-          <button className="w-8 h-8 bg-foreground rounded-full flex items-center justify-center">
-            <X className="h-4 w-4 text-background" />
-          </button>
         </div>
       </section>
 
