@@ -40,7 +40,7 @@ const Header = () => {
               <Input
                 type="search"
                 placeholder="Cherchez un job, une..."
-                className="pl-10 w-64"
+                className="pl-10 w-64 border border-black/20"
               />
             </div>
             

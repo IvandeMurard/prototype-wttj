@@ -21,7 +21,7 @@ const JobSearchBar = ({ searchQuery, setSearchQuery, location, setLocation }: Jo
                 placeholder="Recherchez par job, mot-clé ou entreprise"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 h-12 border border-black/20"
+                className="pl-10 h-12 border border-black/30"
               />
             </div>
           </div>
@@ -33,7 +33,7 @@ const JobSearchBar = ({ searchQuery, setSearchQuery, location, setLocation }: Jo
                 placeholder="France"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="pl-10 h-12 border border-black/20"
+                className="pl-10 h-12 border border-black/30"
               />
               <Button 
                 variant="ghost" 
