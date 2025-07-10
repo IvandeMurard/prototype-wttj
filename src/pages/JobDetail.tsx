@@ -140,7 +140,8 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="bg-white rounded-lg shadow-sm p-8">
+          <div className="grid lg:grid-cols-3 gap-8">
           {/* Left Column - Job Description */}
           <div className="lg:col-span-2">
             {/* Job Post Section */}
@@ -413,7 +414,8 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
           </div>
         </div>
       </div>
-    </div>
+          </div>
+        </div>
   );
 };
 
