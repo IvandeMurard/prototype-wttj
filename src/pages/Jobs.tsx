@@ -124,15 +124,26 @@ const Jobs = () => {
       <div className="bg-card border-b">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-wrap gap-3 items-center">
-            {quickFilters.map((filter, index) => (
-              <Badge
-                key={index}
-                variant={filter.active ? "default" : "secondary"}
-                className="px-3 py-2 text-sm cursor-pointer hover:bg-primary/10"
-              >
-                {filter.label} {filter.count}
-              </Badge>
-            ))}
+            {quickFilters.map((filter, index) => {
+              const colors = [
+                "bg-blue-500 text-white",
+                "bg-green-500 text-white", 
+                "bg-purple-500 text-white",
+                "bg-orange-500 text-white",
+                "bg-pink-500 text-white",
+                "bg-teal-500 text-white"
+              ];
+              
+              return (
+                <Badge
+                  key={index}
+                  variant={filter.active ? "default" : "secondary"}
+                  className={`px-3 py-2 text-sm cursor-pointer hover:bg-primary/10 ${filter.active ? colors[index % colors.length] : ''}`}
+                >
+                  {filter.label} {filter.count}
+                </Badge>
+              );
+            })}
             <Button variant="outline" className="ml-auto">
               <Filter className="h-4 w-4 mr-2" />
               Tous les filtres
