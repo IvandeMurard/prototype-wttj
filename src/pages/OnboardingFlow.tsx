@@ -625,7 +625,7 @@ const OnboardingFlow = () => {
             <div className="flex justify-between items-center mt-8 pt-6 border-t border-border">
               <div>
                 {canSkip && (
-                  <Button variant="outline" onClick={skipStep} className="border-2 hover:bg-muted">
+                  <Button variant="outline" onClick={skipStep} className="border-2 border-black hover:bg-muted">
                     Passer
                   </Button>
                 )}
