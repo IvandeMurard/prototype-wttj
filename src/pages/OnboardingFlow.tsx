@@ -9,7 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Modal, ModalContent, ModalHeader, ModalTitle, ModalTrigger } from "@/components/ui/modal";
-import { MapPin, Briefcase, TrendingUp, DollarSign, Home, Globe, Building2, Layers, Code, User, Upload, FileText, ChevronLeft } from "lucide-react";
+import { MapPin, Briefcase, TrendingUp, Euro, Home, Globe, Building2, Layers, Code, User, Upload, FileText, ChevronLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -48,7 +48,7 @@ const stepTitles = [
 ];
 
 const stepIcons = [
-  MapPin, Briefcase, TrendingUp, DollarSign, Home, Globe, Building2, Layers, Code, User, Upload, FileText
+  MapPin, Briefcase, TrendingUp, Euro, Home, Globe, Building2, Layers, Code, User, Upload, FileText
 ];
 
 const OnboardingFlow = () => {
