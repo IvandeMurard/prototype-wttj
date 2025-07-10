@@ -740,7 +740,7 @@ const OnboardingFlow = () => {
         <div className="max-w-2xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between mb-4">
             {currentStep > 1 && (
-              <Button variant="ghost" size="sm" onClick={prevStep} className="border border-black/20 hover:border-black/40">
+              <Button variant="ghost" size="sm" onClick={prevStep} className="border border-black/30 hover:border-black/50 px-3">
                 <ChevronLeft className="h-4 w-4 mr-1" />
                 Retour
               </Button>

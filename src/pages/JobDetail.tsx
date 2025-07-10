@@ -48,7 +48,7 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
       <div className="bg-wttj-yellow min-h-[400px] relative">
         <div className="max-w-7xl mx-auto px-4 py-8">
           {/* Back Button */}
-          <Button variant="ghost" className="mb-6 p-0 text-black hover:bg-black/10" asChild>
+          <Button variant="ghost" className="mb-6 p-0 text-black hover:bg-black/10 border border-black/20 hover:border-black/40" asChild>
             <Link to="/jobs" className="flex items-center">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Retour
