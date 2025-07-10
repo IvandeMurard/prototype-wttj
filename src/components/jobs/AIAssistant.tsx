@@ -24,7 +24,7 @@ const AIAssistant = ({ showAIAssistant, setShowAIAssistant }: AIAssistantProps) 
       {!showAIAssistant ? (
         <Button
           onClick={() => setShowAIAssistant(true)}
-          className="w-20 h-20 rounded-full bg-gradient-to-r from-wttj-yellow via-yellow-400 to-wttj-yellow hover:from-wttj-yellow/90 hover:via-yellow-400/90 hover:to-wttj-yellow/90 text-foreground shadow-2xl border-4 border-white animate-pulse hover:animate-none transition-all duration-300 hover:scale-110"
+          className="w-20 h-20 rounded-full bg-gradient-to-r from-wttj-yellow via-yellow-400 to-wttj-yellow hover:from-wttj-yellow/90 hover:via-yellow-400/90 hover:to-wttj-yellow/90 text-foreground shadow-2xl border-4 border-white transition-all duration-300 hover:scale-110"
         >
           <div className="relative">
             <svg width="45" height="45" viewBox="0 0 32 32" className="text-black drop-shadow-sm">
@@ -36,6 +36,9 @@ const AIAssistant = ({ showAIAssistant, setShowAIAssistant }: AIAssistantProps) 
             <div className="absolute -top-2 -right-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-full">
               IA
             </div>
+            {/* Diamants décoratifs */}
+            <div className="absolute -top-1 -left-1 w-3 h-3 bg-yellow-300 rotate-45 opacity-80"></div>
+            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-yellow-200 rotate-45 opacity-60"></div>
           </div>
         </Button>
       ) : (
