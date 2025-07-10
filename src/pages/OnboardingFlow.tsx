@@ -600,7 +600,7 @@ const OnboardingFlow = () => {
                     
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Expérience</h3>
-                      <p className="text-sm">{formData.experience}</p>
+                      <p className="text-sm">{formData.experience} années d'expérience</p>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
