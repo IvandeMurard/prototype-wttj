@@ -84,7 +84,7 @@ const Jobs = () => {
                   placeholder="Recherchez par job, mot-clé ou entreprise"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12"
+                  className="pl-10 h-12 border border-black/20"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ const Jobs = () => {
                   placeholder="France"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="pl-10 h-12"
+                  className="pl-10 h-12 border border-black/20"
                 />
                 <Button 
                   variant="ghost" 
@@ -109,7 +109,7 @@ const Jobs = () => {
               </div>
             </div>
             
-            <select className="h-12 px-4 border border-border rounded-md bg-background text-foreground">
+            <select className="h-12 px-4 border border-black/20 rounded-md bg-background text-foreground">
               <option>Type de job</option>
               <option>CDI</option>
               <option>CDD</option>
