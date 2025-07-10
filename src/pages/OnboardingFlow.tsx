@@ -168,17 +168,21 @@ const OnboardingFlow = () => {
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-2">Expérience sur le Poste</h2>
-              <p className="text-muted-foreground">Décrivez votre expérience</p>
+              <p className="text-muted-foreground">Combien d'années d'expérience avez-vous ?</p>
             </div>
             <div className="space-y-4">
-              <Label htmlFor="experience">Votre expérience professionnelle</Label>
-              <Textarea
+              <Label htmlFor="experience">Nombre d'années d'expérience</Label>
+              <Input
                 id="experience"
+                type="number"
+                min="0"
+                max="50"
                 value={formData.experience}
                 onChange={(e) => updateFormData("experience", e.target.value)}
-                placeholder="Décrivez votre parcours professionnel..."
-                className="min-h-32"
+                placeholder="5"
+                className="h-12 text-center text-2xl"
               />
+              <p className="text-sm text-muted-foreground text-center">années</p>
             </div>
           </div>
         );
