@@ -65,12 +65,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				wttj: {
-					yellow: 'hsl(var(--wttj-yellow))',
-					'yellow-dark': 'hsl(var(--wttj-yellow-dark))',
-					'gray-light': 'hsl(var(--wttj-gray-light))',
-					'gray-medium': 'hsl(var(--wttj-gray-medium))'
-				}
+				'wttj-yellow': 'hsl(var(--wttj-yellow))',
+				'wttj-yellow-dark': 'hsl(var(--wttj-yellow-dark))',
+				'wttj-gray-light': 'hsl(var(--wttj-gray-light))',
+				'wttj-gray-medium': 'hsl(var(--wttj-gray-medium))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
