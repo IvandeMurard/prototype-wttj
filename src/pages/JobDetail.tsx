@@ -200,97 +200,102 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
               </CardContent>
             </Card>
 
-            {/* Organization Chart - Simplified */}
+            {/* Team & Environment */}
             <Card className={`mb-8 transition-all duration-500 ease-in-out ${showFullDescription ? 'opacity-100 translate-y-0' : 'opacity-80 translate-y-2'}`}>
               <CardContent className="p-6">
-                <h2 className="text-xl font-semibold mb-6 text-gray-800">Équipe</h2>
+                <div className="flex items-center mb-6">
+                  <Users className="h-5 w-5 mr-2 text-primary" />
+                  <h2 className="text-xl font-semibold">Votre environnement de travail</h2>
+                </div>
                 
-                <div className="space-y-4">
-                  <div className="text-center">
-                    <div className="inline-block bg-gray-100 px-4 py-2 rounded-lg border">
-                      <p className="font-medium text-gray-800">VP Product</p>
-                      <p className="text-sm text-gray-600">Manager direct</p>
-                    </div>
+                {/* Key Info Cards */}
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="bg-primary/5 p-4 rounded-lg border border-primary/10">
+                    <h3 className="font-semibold mb-2 text-primary">👥 Équipe Product</h3>
+                    <p className="text-sm text-muted-foreground mb-2">4 personnes dans l'équipe</p>
+                    <p className="text-sm">• 2 Product Managers junior<br/>• 1 Senior PM (vous)<br/>• 1 VP Product (manager)</p>
                   </div>
                   
-                  <div className="flex justify-center">
-                    <div className="w-px h-8 bg-gray-300"></div>
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                    <h3 className="font-semibold mb-2 text-green-700">🎯 Collaboration directe</h3>
+                    <p className="text-sm text-muted-foreground mb-2">Interaction quotidienne avec :</p>
+                    <p className="text-sm">• Lead Engineering (Tech)<br/>• UX/UI Designer<br/>• Data Analyst</p>
                   </div>
-                  
-                  <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-                    <div className="text-center">
-                      <div className="bg-gray-50 px-3 py-2 rounded border">
-                        <p className="font-medium text-gray-700">Product Manager</p>
-                        <p className="text-xs text-gray-500">Équipe</p>
-                      </div>
+                </div>
+                
+                {/* Reporting Structure */}
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold mb-3">📊 Reporting & Autonomie</h3>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm">
+                      <p className="font-medium">Manager direct : VP Product</p>
+                      <p className="text-muted-foreground">1-on-1 hebdomadaires</p>
                     </div>
-                    
-                    <div className="text-center">
-                      <div className="bg-blue-50 px-3 py-2 rounded border-2 border-blue-200">
-                        <p className="font-medium text-blue-800">Senior Product Manager</p>
-                        <p className="text-xs text-blue-600">Vous</p>
-                      </div>
+                    <div className="text-sm text-right">
+                      <p className="font-medium text-primary">Autonomie élevée</p>
+                      <p className="text-muted-foreground">Décisions produit</p>
                     </div>
-                    
-                    <div className="text-center">
-                      <div className="bg-gray-50 px-3 py-2 rounded border">
-                        <p className="font-medium text-gray-700">Lead Engineering</p>
-                        <p className="text-xs text-gray-500">Collaboration</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center mt-6">
-                    <p className="text-sm text-gray-600">Équipe Product : 4 personnes • Reporting direct au VP Product</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Funding Chart - Simplified */}
+            {/* Company Growth & Stability */}
             <Card className={`mb-8 transition-all duration-500 ease-in-out ${showFullDescription ? 'opacity-100 translate-y-0' : 'opacity-80 translate-y-2'}`}>
               <CardContent className="p-6">
-                <h2 className="text-xl font-semibold mb-6 text-gray-800">Financement</h2>
+                <div className="flex items-center mb-6">
+                  <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center mr-2">
+                    <span className="text-white text-xs">📈</span>
+                  </div>
+                  <h2 className="text-xl font-semibold">Stabilité & croissance</h2>
+                </div>
                 
-                {/* Simple Chart */}
-                <div className="mb-6">
-                  <div className="flex items-end justify-between h-32 border-b border-l border-gray-200 pl-4 pb-2">
-                    <div className="flex flex-col items-center">
-                      <div className="w-8 bg-gray-300 mb-2" style={{height: '20px'}}></div>
-                      <span className="text-xs text-gray-600">2021</span>
-                      <span className="text-xs font-medium">€4M</span>
-                    </div>
-                    <div className="flex flex-col items-center">
-                      <div className="w-8 bg-gray-400 mb-2" style={{height: '50px'}}></div>
-                      <span className="text-xs text-gray-600">2022</span>
-                      <span className="text-xs font-medium">€15M</span>
-                    </div>
-                    <div className="flex flex-col items-center">
-                      <div className="w-8 bg-blue-500 mb-2" style={{height: '100px'}}></div>
-                      <span className="text-xs text-gray-600">2024</span>
-                      <span className="text-xs font-medium">€40M</span>
-                    </div>
+                {/* Growth Indicators */}
+                <div className="grid md:grid-cols-3 gap-4 mb-6">
+                  <div className="text-center p-4 bg-green-50 rounded-lg border border-green-200">
+                    <div className="text-2xl font-bold text-green-600 mb-1">€59M</div>
+                    <div className="text-sm text-muted-foreground">Financements levés</div>
+                    <div className="text-xs text-green-600 mt-1">Depuis 2020</div>
+                  </div>
+                  
+                  <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <div className="text-2xl font-bold text-blue-600 mb-1">Série B</div>
+                    <div className="text-sm text-muted-foreground">Dernière levée</div>
+                    <div className="text-xs text-blue-600 mt-1">€40M en 2024</div>
+                  </div>
+                  
+                  <div className="text-center p-4 bg-purple-50 rounded-lg border border-purple-200">
+                    <div className="text-2xl font-bold text-purple-600 mb-1">€400M</div>
+                    <div className="text-sm text-muted-foreground">Valorisation</div>
+                    <div className="text-xs text-purple-600 mt-1">Évaluation actuelle</div>
                   </div>
                 </div>
                 
-                {/* Key Metrics */}
-                <div className="grid grid-cols-3 gap-6 text-center">
-                  <div>
-                    <p className="text-2xl font-bold text-gray-800">€59M</p>
-                    <p className="text-sm text-gray-600">Total levé</p>
+                {/* What this means for you */}
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="font-semibold mb-3 text-gray-800">🎯 Ce que ça signifie pour vous :</h3>
+                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <p className="flex items-center mb-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        <strong>Stabilité financière</strong> assurée
+                      </p>
+                      <p className="flex items-center">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        <strong>Croissance rapide</strong> et opportunités
+                      </p>
+                    </div>
+                    <div>
+                      <p className="flex items-center mb-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                        <strong>Investisseurs prestigieux</strong> (Balderton, Partech)
+                      </p>
+                      <p className="flex items-center">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        <strong>Potentiel stock-options</strong> attractif
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-2xl font-bold text-gray-800">€400M</p>
-                    <p className="text-sm text-gray-600">Valorisation</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-blue-600">Série B</p>
-                    <p className="text-sm text-gray-600">Dernière levée</p>
-                  </div>
-                </div>
-                
-                <div className="mt-4 text-center">
-                  <p className="text-sm text-gray-600">Investisseurs : Balderton Capital, Partech, DST Global</p>
                 </div>
               </CardContent>
             </Card>
