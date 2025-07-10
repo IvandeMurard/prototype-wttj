@@ -243,7 +243,7 @@ const Jobs = () => {
             onClick={() => setShowAIAssistant(true)}
             className="w-16 h-16 rounded-full bg-wttj-yellow hover:bg-wttj-yellow/90 text-foreground shadow-lg"
           >
-            <HelpCircle className="h-8 w-8 text-black" />
+            <img src="/lovable-uploads/23257e1e-e287-4a07-a000-22373cfef9ae.png" alt="AI Assistant" className="h-8 w-8" />
           </Button>
         ) : (
           <Card className="w-96 max-w-[calc(100vw-2rem)] shadow-2xl">
@@ -251,7 +251,7 @@ const Jobs = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-10 h-10 rounded-full bg-wttj-yellow flex items-center justify-center">
-                    <HelpCircle className="h-6 w-6 text-black" />
+                    <img src="/lovable-uploads/23257e1e-e287-4a07-a000-22373cfef9ae.png" alt="AI Assistant" className="h-6 w-6" />
                   </div>
                   <h3 className="font-semibold">Assistant virtuel</h3>
                 </div>
