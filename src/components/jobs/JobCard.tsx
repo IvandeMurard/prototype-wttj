@@ -70,6 +70,12 @@ const JobCard = ({ job }: JobCardProps) => {
               </div>
               <p className="text-xs text-muted-foreground">{job.postedDate}</p>
             </div>
+            
+            <div className="mt-3 pt-3 border-t">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                Voir l'offre
+              </Button>
+            </div>
           </div>
         </Link>
       </CardContent>
