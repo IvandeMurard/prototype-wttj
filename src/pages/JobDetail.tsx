@@ -249,29 +249,50 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
             {/* Company Details */}
             <Card>
               <CardContent className="p-6">
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <span className="text-white font-bold text-lg">daveo</span>
-                  </div>
-                  <h4 className="font-bold">DAVEO</h4>
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-6 bg-wttj-yellow mr-3"></div>
+                  <h2 className="text-xl font-bold">L'entreprise</h2>
                 </div>
                 
-                <div className="space-y-2 text-sm text-muted-foreground mb-4">
-                  <div className="flex items-center">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">p</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">PENNYLANE</h3>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center text-sm text-muted-foreground">
                     <Building className="h-4 w-4 mr-2" />
-                    IT / Numérique, Organisation / Management, SaaS / Cloud...
+                    Expertise comptable, FinTech / InsurTech, SaaS / Cloud...
                   </div>
-                  <div className="flex items-center">
-                    <Users className="h-4 w-4 mr-2" />
-                    {companyStats.employees}
+                  
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="flex items-center text-muted-foreground">
+                      <Users className="h-4 w-4 mr-2" />
+                      610 collaborateurs
+                    </div>
+                    <div className="flex items-center text-muted-foreground">
+                      <span className="mr-2">📅</span>
+                      Créée en 2020
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <span className="mr-2">📅</span>
-                    {companyStats.founded}
-                  </div>
-                  <div className="flex items-center">
-                    <span className="mr-2">💰</span>
-                    {companyStats.revenue}
+                  
+                  <div className="grid grid-cols-3 gap-4 text-sm text-muted-foreground">
+                    <div className="flex items-center">
+                      <span className="mr-2">👥</span>
+                      Âge moyen : 32 ans
+                    </div>
+                    <div className="flex items-center">
+                      <span className="mr-2">⚧</span>
+                      35%
+                    </div>
+                    <div className="flex items-center">
+                      <span className="mr-2">⚧</span>
+                      65%
+                    </div>
                   </div>
                 </div>
                 
@@ -279,8 +300,9 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                   <Button variant="outline" size="sm" className="flex-1">
                     Voir le site ↗
                   </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
-                    Voir toutes les offres 😊
+                  <Button variant="outline" size="sm" className="flex-1 relative">
+                    Voir toutes les offres
+                    <span className="ml-2 bg-wttj-yellow text-black text-xs font-bold px-2 py-1 rounded">57</span>
                   </Button>
                 </div>
               </CardContent>
