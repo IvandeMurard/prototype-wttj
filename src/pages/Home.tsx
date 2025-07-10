@@ -71,7 +71,7 @@ const Home = () => {
               />
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-6 text-center lg:text-right">
               <h2 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 PROFIL TECH 5+ ANS<br />
                 D'EXPÉRIENCE
