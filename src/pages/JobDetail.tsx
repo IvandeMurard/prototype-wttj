@@ -15,13 +15,13 @@ const JobDetail = () => {
     id: 1,
     title: "Product Manager",
     company: "pennylane",
-    companyDescription: "Financial management & accounting platform",
+    companyDescription: "Plateforme de gestion financière et comptable",
     employees: "501-1000 employés",
     salary: "€50-85k",
-    level: "Senior level",
+    level: "Niveau senior",
     location: "Paris",
     workType: "Télétravail partiel",
-    tags: ["B2B", "Fintech", "Bookkeeping", "SaaS", "Accounting", "Automation"],
+    tags: ["B2B", "Fintech", "Comptabilité", "SaaS", "Comptabilité", "Automatisation"],
     description: `Daveo est un cabinet de conseil spécialisé dans les domaines du product management, de la technologie et du cloud. Fondé en 2008, Daveo a bâti sa réputation sur une culture d'entreprise forte axée sur la réussite collective. Voici quelques points clés à propos de Daveo :
 
 • Innovation et Collaboration : Daveo allie amour de l'innovation et état d'esprit collaboratif pour offrir des solutions de pointe à ses clients.
@@ -109,11 +109,11 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
 
                 <div className="space-y-3">
                   <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                    Open for applications
+                    Ouvert aux candidatures
                   </Button>
                   <Button variant="outline" className="w-full">
                     <Star className="h-4 w-4 mr-2" />
-                    Follow {job.company}
+                    Suivre {job.company}
                   </Button>
                 </div>
               </CardContent>
@@ -236,7 +236,7 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                 <div className="space-y-2 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center">
                     <Building className="h-4 w-4 mr-2" />
-                    IT / Digital, Organisation / Management, SaaS / Cloud...
+                    IT / Numérique, Organisation / Management, SaaS / Cloud...
                   </div>
                   <div className="flex items-center">
                     <Users className="h-4 w-4 mr-2" />
