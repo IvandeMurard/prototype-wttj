@@ -30,7 +30,7 @@ interface OnboardingData {
   cv: File | null;
 }
 
-const TOTAL_STEPS = 12;
+const TOTAL_STEPS = 11;
 
 const stepTitles = [
   "Localisation",
@@ -79,7 +79,7 @@ const OnboardingFlow = () => {
   const [showSummary, setShowSummary] = useState(false);
 
   useEffect(() => {
-    if (currentStep < 1 || currentStep > TOTAL_STEPS) {
+    if (currentStep < 1 || currentStep > 12) {
       navigate("/onboarding/1");
     }
   }, [currentStep, navigate]);
@@ -94,7 +94,7 @@ const OnboardingFlow = () => {
 
   const nextStep = () => {
     saveData();
-    if (currentStep === TOTAL_STEPS) {
+    if (currentStep === 12) {
       navigate("/jobs");
     } else {
       navigate(`/onboarding/${currentStep + 1}`);
@@ -737,7 +737,7 @@ const OnboardingFlow = () => {
     }
   };
 
-  if (currentStep < 1 || currentStep > TOTAL_STEPS) {
+  if (currentStep < 1 || currentStep > 12) {
     return null;
   }
 
@@ -745,26 +745,28 @@ const OnboardingFlow = () => {
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
       
-      {/* Header avec progress bar */}
-      <div className="bg-white border-b border-border">
-        <div className="max-w-2xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-between mb-4">
-            {currentStep > 1 && (
-              <Button variant="ghost" size="sm" onClick={prevStep} className="border border-black/30 hover:border-black/50 px-3">
-                <ChevronLeft className="h-4 w-4 mr-1" />
-                Retour
-              </Button>
-            )}
-            <div className="text-sm text-muted-foreground">
-              Étape {currentStep} sur {TOTAL_STEPS}
+      {/* Header avec progress bar - masqué sur la page de résumé */}
+      {currentStep !== 12 && (
+        <div className="bg-white border-b border-border">
+          <div className="max-w-2xl mx-auto px-4 py-6">
+            <div className="flex items-center justify-between mb-4">
+              {currentStep > 1 && (
+                <Button variant="ghost" size="sm" onClick={prevStep} className="border border-black/30 hover:border-black/50 px-3">
+                  <ChevronLeft className="h-4 w-4 mr-1" />
+                  Retour
+                </Button>
+              )}
+              <div className="text-sm text-muted-foreground">
+                Étape {currentStep} sur {TOTAL_STEPS}
+              </div>
             </div>
+            <Progress 
+              value={(currentStep / TOTAL_STEPS) * 100} 
+              className="h-2"
+            />
           </div>
-          <Progress 
-            value={(currentStep / TOTAL_STEPS) * 100} 
-            className="h-2"
-          />
         </div>
-      </div>
+      )}
 
       {/* Contenu principal */}
       <div className="flex-1">
@@ -790,7 +792,7 @@ const OnboardingFlow = () => {
                   (currentStep === 3 && !formData.experience)
                 )}
               >
-                {currentStep === TOTAL_STEPS ? "Finaliser et voir les offres" : "Valider"}
+                {currentStep === 12 ? "Finaliser et voir les offres" : "Valider"}
               </Button>
             </div>
           </div>
