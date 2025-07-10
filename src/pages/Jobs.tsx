@@ -65,6 +65,15 @@ const Jobs = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
+      {/* Bandeau jaune */}
+      <div className="bg-wttj-yellow py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-3xl font-bold text-black">
+            Découvrez les offres qui vous correspondent
+          </h1>
+        </div>
+      </div>
+      
       <JobSearchBar 
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
