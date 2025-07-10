@@ -56,9 +56,9 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
           </Button>
 
           {/* Job Header Card */}
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 items-start">
             {/* Left Column - Job Info */}
-            <div className="space-y-4">
+            <div className="space-y-4 lg:border-r lg:border-gray-200 lg:pr-6">
               <h1 className="text-4xl font-bold text-black mb-6">{job.title}</h1>
               
               <div className="flex items-center space-x-2 mb-4">
