@@ -646,7 +646,7 @@ const OnboardingFlow = () => {
                     <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
                   </div>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium">Préférences:</span> {formData.teletravail.join(", ")}</p>
+                    <p><span className="font-medium">Préférences:</span> {Array.isArray(formData.teletravail) ? formData.teletravail.join(", ") : "Non défini"}</p>
                   </div>
                 </div>
               </div>
@@ -672,7 +672,7 @@ const OnboardingFlow = () => {
                     <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
                   </div>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium">Préférences:</span> {formData.tailleEntreprise.join(", ")}</p>
+                    <p><span className="font-medium">Préférences:</span> {Array.isArray(formData.tailleEntreprise) ? formData.tailleEntreprise.join(", ") : "Non défini"}</p>
                   </div>
                 </div>
 
@@ -685,7 +685,7 @@ const OnboardingFlow = () => {
                     <Pencil className="h-4 w-4 text-muted-foreground group-hover:text-wttj-yellow" />
                   </div>
                   <div className="space-y-2 text-sm">
-                    <p><span className="font-medium">Secteurs:</span> {formData.secteurActivite.join(", ")}</p>
+                    <p><span className="font-medium">Secteurs:</span> {Array.isArray(formData.secteurActivite) ? formData.secteurActivite.join(", ") : "Non défini"}</p>
                   </div>
                 </div>
               </div>
