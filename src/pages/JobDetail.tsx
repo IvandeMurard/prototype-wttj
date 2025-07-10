@@ -56,8 +56,8 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
           </Button>
 
           {/* Job Header Card */}
-          <div className="max-w-5xl mx-auto bg-white rounded-lg shadow-sm">
-            <div className="grid lg:grid-cols-[1fr_1px_1fr] gap-0 items-start p-8">
+          <div className="max-w-5xl mx-auto" style={{backgroundColor: '#ffffff'}}>
+            <div className="grid lg:grid-cols-[1fr_1px_1fr] gap-0 items-start p-8" style={{backgroundColor: '#ffffff'}}>
             {/* Left Column - Job Info */}
             <div className="space-y-4 lg:pr-8">
               <h1 className="text-4xl font-bold text-black mb-6">{job.title}</h1>
@@ -140,7 +140,7 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-sm p-8">
+        <div className="rounded-lg shadow-sm p-8" style={{backgroundColor: '#ffffff'}}>
           <div className="grid lg:grid-cols-3 gap-8">
           {/* Left Column - Job Description */}
           <div className="lg:col-span-2">
