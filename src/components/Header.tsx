@@ -1,6 +1,7 @@
 import { Search, User, Bell, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,13 +11,13 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <div className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <img 
                   src="/lovable-uploads/f2161f4e-5f19-410a-b01f-03c579527f9f.png" 
                   alt="Welcome to the Jungle" 
-                  className="h-12"
+                  className="h-12 hover:opacity-80 transition-opacity cursor-pointer"
                 />
-              </div>
+              </Link>
             </div>
           </div>
 
