@@ -57,42 +57,49 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
 
           {/* Job Header Card */}
           <div className="grid lg:grid-cols-2 gap-8 items-start">
-            <div className="space-y-6">
-              <div>
-                <h1 className="text-4xl font-bold text-black mb-4">{job.title}</h1>
-                <div className="space-y-3">
-                  <Badge className="bg-green-500 text-white text-sm font-medium px-3 py-1">
-                    {job.salary}
-                  </Badge>
-                  <div className="flex items-center text-black">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    <span className="font-medium">{job.level}</span>
-                  </div>
-                  <div className="flex items-center text-black">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    <Badge className="bg-green-500 text-white text-sm font-medium px-3 py-1">
-                      {job.location}
-                    </Badge>
-                  </div>
-                  <div className="text-black font-medium">{job.workType}</div>
+            {/* Left Column - Job Info */}
+            <div className="space-y-4">
+              <h1 className="text-4xl font-bold text-black mb-6">{job.title}</h1>
+              
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-6 h-6 bg-black rounded flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">💰</span>
                 </div>
+                <Badge className="bg-green-500 text-white text-sm font-medium px-3 py-1">
+                  {job.salary}
+                </Badge>
               </div>
+
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-6 h-6 bg-black rounded flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">⚡</span>
+                </div>
+                <span className="text-black font-medium">{job.level}</span>
+              </div>
+
+              <div className="flex items-center space-x-2 mb-4">
+                <MapPin className="h-6 w-6 text-black" />
+                <Badge className="bg-green-500 text-white text-sm font-medium px-3 py-1">
+                  {job.location}
+                </Badge>
+              </div>
+
+              <div className="text-black font-medium">{job.workType}</div>
             </div>
 
-            {/* Company Info Card */}
+            {/* Right Column - Company Info */}
             <Card className="bg-white">
               <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">p</span>
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg">{job.company}</h3>
-                      <p className="text-sm text-muted-foreground">{job.companyDescription}</p>
-                    </div>
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">p</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">{job.company}</h3>
                   </div>
                 </div>
+                
+                <p className="text-sm text-muted-foreground mb-4">{job.companyDescription}</p>
                 
                 <div className="flex items-center text-sm text-muted-foreground mb-4">
                   <Users className="h-4 w-4 mr-2" />
@@ -101,7 +108,11 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {job.tags.map((tag, index) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
+                    <Badge 
+                      key={tag} 
+                      variant="secondary" 
+                      className={`text-xs ${index === 0 ? 'bg-green-500 text-white' : ''}`}
+                    >
                       {tag}
                     </Badge>
                   ))}
