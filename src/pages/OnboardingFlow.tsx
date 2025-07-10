@@ -10,6 +10,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Modal, ModalContent, ModalHeader, ModalTitle, ModalTrigger } from "@/components/ui/modal";
 import { MapPin, Briefcase, TrendingUp, DollarSign, Home, Globe, Building2, Layers, Code, User, Upload, FileText, ChevronLeft } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 interface OnboardingData {
   localisation: string;
@@ -585,7 +587,9 @@ const OnboardingFlow = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
+      <Header />
+      
       {/* Header avec progress bar */}
       <div className="bg-white border-b border-border">
         <div className="max-w-2xl mx-auto px-4 py-6">
@@ -608,33 +612,37 @@ const OnboardingFlow = () => {
       </div>
 
       {/* Contenu principal */}
-      <div className="max-w-2xl mx-auto px-4 py-12">
-        <div className="bg-card rounded-lg border border-border p-8">
-          {renderStepContent()}
-          
-          {/* Boutons de navigation */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-border">
-            <div>
-              {canSkip && (
-                <Button variant="ghost" onClick={skipStep}>
-                  Passer
-                </Button>
-              )}
+      <div className="flex-1">
+        <div className="max-w-2xl mx-auto px-4 py-12">
+          <div className="bg-card rounded-lg border border-border p-8">
+            {renderStepContent()}
+            
+            {/* Boutons de navigation */}
+            <div className="flex justify-between items-center mt-8 pt-6 border-t border-border">
+              <div>
+                {canSkip && (
+                  <Button variant="ghost" onClick={skipStep}>
+                    Passer
+                  </Button>
+                )}
+              </div>
+              <Button 
+                onClick={nextStep}
+                className="bg-wttj-yellow text-black hover:bg-wttj-yellow-dark px-8"
+                disabled={isRequired && (
+                  (currentStep === 1 && !formData.localisation) ||
+                  (currentStep === 2 && !formData.typePoste) ||
+                  (currentStep === 3 && !formData.experience)
+                )}
+              >
+                {currentStep === TOTAL_STEPS ? "Terminer" : "Valider"}
+              </Button>
             </div>
-            <Button 
-              onClick={nextStep}
-              className="bg-wttj-yellow text-black hover:bg-wttj-yellow-dark px-8"
-              disabled={isRequired && (
-                (currentStep === 1 && !formData.localisation) ||
-                (currentStep === 2 && !formData.typePoste) ||
-                (currentStep === 3 && !formData.experience)
-              )}
-            >
-              {currentStep === TOTAL_STEPS ? "Terminer" : "Valider"}
-            </Button>
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
