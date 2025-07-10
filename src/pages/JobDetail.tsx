@@ -204,7 +204,7 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
             <Card className={`mb-8 transition-all duration-500 ease-in-out ${showFullDescription ? 'opacity-100 translate-y-0' : 'opacity-80 translate-y-2'}`}>
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <Users className="h-5 w-5 mr-2 text-primary" />
+                  <Building className="h-5 w-5 mr-2 text-primary" />
                   <h2 className="text-xl font-semibold">Votre environnement de travail</h2>
                 </div>
                 
@@ -244,9 +244,7 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
             <Card className={`mb-8 transition-all duration-500 ease-in-out ${showFullDescription ? 'opacity-100 translate-y-0' : 'opacity-80 translate-y-2'}`}>
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center mr-2">
-                    <span className="text-white text-xs">📈</span>
-                  </div>
+                  <Star className="h-5 w-5 mr-2 text-primary" />
                   <h2 className="text-xl font-semibold">Stabilité & croissance</h2>
                 </div>
                 
