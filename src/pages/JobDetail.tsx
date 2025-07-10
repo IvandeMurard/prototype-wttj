@@ -62,18 +62,14 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
               <h1 className="text-4xl font-bold text-black mb-6">{job.title}</h1>
               
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-6 h-6 bg-black rounded flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">💰</span>
-                </div>
+                <Star className="h-6 w-6 text-black" />
                 <Badge className="bg-green-500 text-white text-sm font-medium px-3 py-1">
                   {job.salary}
                 </Badge>
               </div>
 
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-6 h-6 bg-black rounded flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">⚡</span>
-                </div>
+                <Users className="h-6 w-6 text-black" />
                 <span className="text-black font-medium">{job.level}</span>
               </div>
 
@@ -211,13 +207,13 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                 {/* Key Info Cards */}
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-primary/5 p-4 rounded-lg border border-primary/10">
-                    <h3 className="font-semibold mb-2 text-primary">👥 Équipe Product</h3>
+                    <h3 className="font-semibold mb-2 text-primary">Équipe Product</h3>
                     <p className="text-sm text-muted-foreground mb-2">4 personnes dans l'équipe</p>
                     <p className="text-sm">• 2 Product Managers junior<br/>• 1 Senior PM (vous)<br/>• 1 VP Product (manager)</p>
                   </div>
                   
                   <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                    <h3 className="font-semibold mb-2 text-green-700">🎯 Collaboration directe</h3>
+                    <h3 className="font-semibold mb-2 text-green-700">Collaboration directe</h3>
                     <p className="text-sm text-muted-foreground mb-2">Interaction quotidienne avec :</p>
                     <p className="text-sm">• Lead Engineering (Tech)<br/>• UX/UI Designer<br/>• Data Analyst</p>
                   </div>
@@ -225,7 +221,7 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                 
                 {/* Reporting Structure */}
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold mb-3">📊 Reporting & Autonomie</h3>
+                  <h3 className="font-semibold mb-3">Reporting & Autonomie</h3>
                   <div className="flex items-center justify-between">
                     <div className="text-sm">
                       <p className="font-medium">Manager direct : VP Product</p>
@@ -271,7 +267,7 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                 
                 {/* What this means for you */}
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold mb-3 text-gray-800">🎯 Ce que ça signifie pour vous :</h3>
+                  <h3 className="font-semibold mb-3 text-gray-800">Ce que ça signifie pour vous :</h3>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <p className="flex items-center mb-2">
