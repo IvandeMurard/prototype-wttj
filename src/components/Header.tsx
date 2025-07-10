@@ -11,10 +11,11 @@ const Header = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
-                  <div className="w-6 h-6 bg-wttj-yellow rounded-full"></div>
-                </div>
-                <span className="font-bold text-xl text-foreground">Welcome to the Jungle</span>
+                <img 
+                  src="/lovable-uploads/f2161f4e-5f19-410a-b01f-03c579527f9f.png" 
+                  alt="Welcome to the Jungle" 
+                  className="h-8"
+                />
               </div>
             </div>
           </div>

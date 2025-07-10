@@ -10,10 +10,11 @@ const Footer = () => {
           {/* Logo et réseaux sociaux */}
           <div className="col-span-1">
             <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
-                <div className="w-6 h-6 bg-wttj-yellow rounded-full"></div>
-              </div>
-              <span className="font-bold text-lg text-white">Welcome to the Jungle</span>
+              <img 
+                src="/lovable-uploads/3daf6cc6-782b-406b-ba04-b92c9ec65dc4.png" 
+                alt="Welcome to the Jungle" 
+                className="h-8"
+              />
             </div>
             
             <div className="flex space-x-4">
