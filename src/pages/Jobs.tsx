@@ -243,7 +243,13 @@ const Jobs = () => {
             onClick={() => setShowAIAssistant(true)}
             className="w-16 h-16 rounded-full bg-wttj-yellow hover:bg-wttj-yellow/90 text-foreground shadow-lg"
           >
-            <img src="/lovable-uploads/23257e1e-e287-4a07-a000-22373cfef9ae.png" alt="AI Assistant" className="h-8 w-8" />
+            <div className="relative">
+              <svg width="32" height="32" viewBox="0 0 32 32" className="text-black">
+                <path d="M16 2 L20 12 L30 16 L20 20 L16 30 L12 20 L2 16 L12 12 Z" fill="currentColor" />
+                <path d="M24 6 L26 10 L30 12 L26 14 L24 18 L22 14 L18 12 L22 10 Z" fill="currentColor" />
+                <path d="M8 22 L9 24 L11 25 L9 26 L8 28 L7 26 L5 25 L7 24 Z" fill="currentColor" />
+              </svg>
+            </div>
           </Button>
         ) : (
           <Card className="w-96 max-w-[calc(100vw-2rem)] shadow-2xl">
@@ -251,7 +257,11 @@ const Jobs = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-10 h-10 rounded-full bg-wttj-yellow flex items-center justify-center">
-                    <img src="/lovable-uploads/23257e1e-e287-4a07-a000-22373cfef9ae.png" alt="AI Assistant" className="h-6 w-6" />
+                    <svg width="24" height="24" viewBox="0 0 32 32" className="text-black">
+                      <path d="M16 2 L20 12 L30 16 L20 20 L16 30 L12 20 L2 16 L12 12 Z" fill="currentColor" />
+                      <path d="M24 6 L26 10 L30 12 L26 14 L24 18 L22 14 L18 12 L22 10 Z" fill="currentColor" />
+                      <path d="M8 22 L9 24 L11 25 L9 26 L8 28 L7 26 L5 25 L7 24 Z" fill="currentColor" />
+                    </svg>
                   </div>
                   <h3 className="font-semibold">Assistant virtuel</h3>
                 </div>
