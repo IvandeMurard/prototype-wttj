@@ -175,7 +175,7 @@ const OnboardingFlow = () => {
               <Input
                 id="experience"
                 type="number"
-                min="0"
+                min="5"
                 max="50"
                 value={formData.experience}
                 onChange={(e) => updateFormData("experience", e.target.value)}
