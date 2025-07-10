@@ -24,14 +24,18 @@ const AIAssistant = ({ showAIAssistant, setShowAIAssistant }: AIAssistantProps) 
       {!showAIAssistant ? (
         <Button
           onClick={() => setShowAIAssistant(true)}
-          className="w-16 h-16 rounded-full bg-wttj-yellow hover:bg-wttj-yellow/90 text-foreground shadow-lg"
+          className="w-20 h-20 rounded-full bg-gradient-to-r from-wttj-yellow via-yellow-400 to-wttj-yellow hover:from-wttj-yellow/90 hover:via-yellow-400/90 hover:to-wttj-yellow/90 text-foreground shadow-2xl border-4 border-white animate-pulse hover:animate-none transition-all duration-300 hover:scale-110"
         >
           <div className="relative">
-            <svg width="40" height="40" viewBox="0 0 32 32" className="text-black">
+            <svg width="45" height="45" viewBox="0 0 32 32" className="text-black drop-shadow-sm">
               <path d="M16 2 L20 12 L30 16 L20 20 L16 30 L12 20 L2 16 L12 12 Z" fill="currentColor" />
               <path d="M24 6 L26 10 L30 12 L26 14 L24 18 L22 14 L18 12 L22 10 Z" fill="currentColor" />
               <path d="M8 22 L9 24 L11 25 L9 26 L8 28 L7 26 L5 25 L7 24 Z" fill="currentColor" />
             </svg>
+            {/* Badge "IA" pour identifier la fonctionnalité */}
+            <div className="absolute -top-2 -right-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-full">
+              IA
+            </div>
           </div>
         </Button>
       ) : (
