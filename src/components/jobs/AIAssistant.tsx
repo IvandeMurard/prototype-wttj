@@ -32,13 +32,9 @@ const AIAssistant = ({ showAIAssistant, setShowAIAssistant }: AIAssistantProps) 
               <path d="M24 6 L26 10 L30 12 L26 14 L24 18 L22 14 L18 12 L22 10 Z" fill="currentColor" />
               <path d="M8 22 L9 24 L11 25 L9 26 L8 28 L7 26 L5 25 L7 24 Z" fill="currentColor" />
             </svg>
-            {/* Badge "IA" pour identifier la fonctionnalité */}
-            <div className="absolute -top-2 -right-2 bg-black text-white text-xs font-bold px-2 py-1 rounded-full">
-              IA
-            </div>
-            {/* Diamants décoratifs */}
-            <div className="absolute -top-1 -left-1 w-3 h-3 bg-yellow-300 rotate-45 opacity-80"></div>
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-yellow-200 rotate-45 opacity-60"></div>
+            {/* Diamants décoratifs en noir */}
+            <div className="absolute -top-1 -left-1 w-3 h-3 bg-black rotate-45 opacity-80"></div>
+            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black rotate-45 opacity-60"></div>
           </div>
         </Button>
       ) : (
