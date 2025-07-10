@@ -121,11 +121,11 @@ En somme, Daveo est un acteur dynamique qui allie expertise...`
                     ))}
                   </div>
 
-                  <div className="space-y-3">
-                    <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                  <div className="space-y-3 flex flex-col items-center">
+                    <Button className="w-48 bg-green-500 hover:bg-green-600 text-white">
                       Postuler
                     </Button>
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-48">
                       <Star className="h-4 w-4 mr-2" />
                       Suivre {job.company}
                     </Button>
