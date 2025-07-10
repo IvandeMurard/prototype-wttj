@@ -368,29 +368,72 @@ const OnboardingFlow = () => {
           <div className="space-y-6">
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-2">Technologies maitrisées</h2>
-              <p className="text-muted-foreground">Quelles technologies maîtrisez-vous ?</p>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Compétences et outils</h2>
+              <p className="text-muted-foreground">Quelles sont vos compétences principales ?</p>
             </div>
             <div className="space-y-4">
-              <Label>Technologies et compétences</Label>
-              <div className="grid grid-cols-2 gap-2">
-                {["React", "Vue.js", "Angular", "Node.js", "Python", "Java", "Go", "TypeScript", "PHP", "Ruby", "Swift", "Kotlin"].map((tech) => (
-                  <div key={tech} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={tech}
-                      checked={formData.technologies.includes(tech)}
-                      onCheckedChange={(checked) => {
-                        if (checked) {
-                          updateFormData("technologies", [...formData.technologies, tech]);
-                        } else {
-                          updateFormData("technologies", formData.technologies.filter(t => t !== tech));
-                        }
-                      }}
-                    />
-                    <Label htmlFor={tech}>{tech}</Label>
+              <Label>Domaines de compétences</Label>
+              <Select
+                value={formData.technologies[0] || ""}
+                onValueChange={(value) => {
+                  if (value && !formData.technologies.includes(value)) {
+                    updateFormData("technologies", [...formData.technologies, value]);
+                  }
+                }}
+              >
+                <SelectTrigger className="h-12">
+                  <SelectValue placeholder="Sélectionnez vos compétences" />
+                </SelectTrigger>
+                <SelectContent className="bg-white border border-border shadow-lg z-50">
+                  <SelectItem value="product-management">Product Management</SelectItem>
+                  <SelectItem value="project-management">Gestion de projet</SelectItem>
+                  <SelectItem value="data-analysis">Analyse de données</SelectItem>
+                  <SelectItem value="digital-marketing">Marketing digital</SelectItem>
+                  <SelectItem value="ux-ui-design">UX/UI Design</SelectItem>
+                  <SelectItem value="business-development">Business Development</SelectItem>
+                  <SelectItem value="agile-scrum">Méthodologies Agile/Scrum</SelectItem>
+                  <SelectItem value="sql">SQL</SelectItem>
+                  <SelectItem value="excel-advanced">Excel avancé</SelectItem>
+                  <SelectItem value="figma">Figma</SelectItem>
+                  <SelectItem value="jira">Jira</SelectItem>
+                  <SelectItem value="notion">Notion</SelectItem>
+                  <SelectItem value="slack">Slack</SelectItem>
+                  <SelectItem value="google-analytics">Google Analytics</SelectItem>
+                  <SelectItem value="salesforce">Salesforce</SelectItem>
+                  <SelectItem value="hubspot">HubSpot</SelectItem>
+                  <SelectItem value="react">React</SelectItem>
+                  <SelectItem value="vue">Vue.js</SelectItem>
+                  <SelectItem value="angular">Angular</SelectItem>
+                  <SelectItem value="nodejs">Node.js</SelectItem>
+                  <SelectItem value="python">Python</SelectItem>
+                  <SelectItem value="java">Java</SelectItem>
+                </SelectContent>
+              </Select>
+              
+              {/* Affichage des compétences sélectionnées */}
+              {formData.technologies.length > 0 && (
+                <div className="mt-4">
+                  <Label className="text-sm">Compétences sélectionnées :</Label>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {formData.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-wttj-yellow/20 px-3 py-1 rounded-full text-sm flex items-center gap-2"
+                      >
+                        {tech.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                        <button
+                          onClick={() => {
+                            updateFormData("technologies", formData.technologies.filter(t => t !== tech));
+                          }}
+                          className="text-red-500 hover:text-red-700"
+                        >
+                          ×
+                        </button>
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         );
