@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/3daf6cc6-782b-406b-ba04-b92c9ec65dc4.png" 
                 alt="Welcome to the Jungle" 
-                className="h-8"
+                className="h-12"
               />
             </div>
             

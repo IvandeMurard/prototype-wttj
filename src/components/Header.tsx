@@ -14,7 +14,7 @@ const Header = () => {
                 <img 
                   src="/lovable-uploads/f2161f4e-5f19-410a-b01f-03c579527f9f.png" 
                   alt="Welcome to the Jungle" 
-                  className="h-8"
+                  className="h-12"
                 />
               </div>
             </div>
