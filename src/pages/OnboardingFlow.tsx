@@ -368,11 +368,11 @@ const OnboardingFlow = () => {
           <div className="space-y-6">
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-2">Compétences et outils</h2>
-              <p className="text-muted-foreground">Quelles sont vos compétences principales ?</p>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Outils et technologies</h2>
+              <p className="text-muted-foreground">Quels outils maîtrisez-vous ?</p>
             </div>
             <div className="space-y-4">
-              <Label>Domaines de compétences</Label>
+              <Label className="text-lg font-semibold">Sélectionnez vos outils *</Label>
               <Select
                 value={formData.technologies[0] || ""}
                 onValueChange={(value) => {
@@ -381,51 +381,78 @@ const OnboardingFlow = () => {
                   }
                 }}
               >
-                <SelectTrigger className="h-12">
-                  <SelectValue placeholder="Sélectionnez vos compétences" />
+                <SelectTrigger className="h-14 text-lg border-2 border-wttj-yellow focus:border-wttj-yellow-dark focus:ring-2 focus:ring-wttj-yellow/20">
+                  <SelectValue placeholder="Choisissez dans la liste..." />
                 </SelectTrigger>
-                <SelectContent className="bg-white border border-border shadow-lg z-50">
-                  <SelectItem value="product-management">Product Management</SelectItem>
-                  <SelectItem value="project-management">Gestion de projet</SelectItem>
-                  <SelectItem value="data-analysis">Analyse de données</SelectItem>
-                  <SelectItem value="digital-marketing">Marketing digital</SelectItem>
-                  <SelectItem value="ux-ui-design">UX/UI Design</SelectItem>
-                  <SelectItem value="business-development">Business Development</SelectItem>
-                  <SelectItem value="agile-scrum">Méthodologies Agile/Scrum</SelectItem>
-                  <SelectItem value="sql">SQL</SelectItem>
-                  <SelectItem value="excel-advanced">Excel avancé</SelectItem>
+                <SelectContent className="bg-white border-2 border-border shadow-xl z-50 max-h-80 overflow-y-auto">
+                  {/* Outils de conception */}
+                  <div className="px-2 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wide bg-gray-50">
+                    Outils de conception
+                  </div>
                   <SelectItem value="figma">Figma</SelectItem>
+                  <SelectItem value="sketch">Sketch</SelectItem>
+                  <SelectItem value="adobe-xd">Adobe XD</SelectItem>
+                  <SelectItem value="canva">Canva</SelectItem>
+                  
+                  {/* Outils de gestion */}
+                  <div className="px-2 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wide bg-gray-50 mt-2">
+                    Outils de gestion
+                  </div>
                   <SelectItem value="jira">Jira</SelectItem>
+                  <SelectItem value="trello">Trello</SelectItem>
                   <SelectItem value="notion">Notion</SelectItem>
-                  <SelectItem value="slack">Slack</SelectItem>
+                  <SelectItem value="asana">Asana</SelectItem>
+                  <SelectItem value="monday">Monday.com</SelectItem>
+                  
+                  {/* Outils d'analyse */}
+                  <div className="px-2 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wide bg-gray-50 mt-2">
+                    Outils d'analyse
+                  </div>
                   <SelectItem value="google-analytics">Google Analytics</SelectItem>
-                  <SelectItem value="salesforce">Salesforce</SelectItem>
+                  <SelectItem value="mixpanel">Mixpanel</SelectItem>
+                  <SelectItem value="hotjar">Hotjar</SelectItem>
+                  <SelectItem value="tableau">Tableau</SelectItem>
+                  
+                  {/* Outils marketing */}
+                  <div className="px-2 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wide bg-gray-50 mt-2">
+                    Outils marketing
+                  </div>
                   <SelectItem value="hubspot">HubSpot</SelectItem>
+                  <SelectItem value="salesforce">Salesforce</SelectItem>
+                  <SelectItem value="mailchimp">Mailchimp</SelectItem>
+                  <SelectItem value="google-ads">Google Ads</SelectItem>
+                  
+                  {/* Technologies de développement */}
+                  <div className="px-2 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wide bg-gray-50 mt-2">
+                    Technologies de développement
+                  </div>
                   <SelectItem value="react">React</SelectItem>
                   <SelectItem value="vue">Vue.js</SelectItem>
                   <SelectItem value="angular">Angular</SelectItem>
                   <SelectItem value="nodejs">Node.js</SelectItem>
                   <SelectItem value="python">Python</SelectItem>
                   <SelectItem value="java">Java</SelectItem>
+                  <SelectItem value="sql">SQL</SelectItem>
                 </SelectContent>
               </Select>
               
-              {/* Affichage des compétences sélectionnées */}
+              {/* Affichage des outils sélectionnés */}
               {formData.technologies.length > 0 && (
-                <div className="mt-4">
-                  <Label className="text-sm">Compétences sélectionnées :</Label>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                <div className="mt-6 p-4 bg-wttj-yellow/10 rounded-lg border-2 border-wttj-yellow/30">
+                  <Label className="text-lg font-semibold mb-3 block">Outils sélectionnés :</Label>
+                  <div className="flex flex-wrap gap-3">
                     {formData.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-wttj-yellow/20 px-3 py-1 rounded-full text-sm flex items-center gap-2"
+                        className="bg-wttj-yellow px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 text-black"
                       >
                         {tech.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
                         <button
                           onClick={() => {
                             updateFormData("technologies", formData.technologies.filter(t => t !== tech));
                           }}
-                          className="text-red-500 hover:text-red-700"
+                          className="text-black hover:text-red-600 font-bold text-lg"
+                          aria-label={`Supprimer ${tech}`}
                         >
                           ×
                         </button>
