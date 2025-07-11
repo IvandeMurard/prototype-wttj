@@ -114,7 +114,7 @@ const OnboardingFlow = () => {
     }
   };
 
-  const canSkip = currentStep >= 4 && currentStep < TOTAL_STEPS;
+  const canSkip = currentStep >= 4 && currentStep < TOTAL_STEPS && currentStep !== 10;
   const isRequired = currentStep <= 3;
 
   const renderStepContent = () => {
