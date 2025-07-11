@@ -19,7 +19,7 @@ const AIAssistantWidget = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-4">
+    <div className="max-w-7xl mx-auto px-4 py-2">
       <div className="flex justify-center">
         <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full max-w-lg">
           <CollapsibleTrigger asChild>
