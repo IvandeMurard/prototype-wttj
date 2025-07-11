@@ -4,7 +4,7 @@ import JobSearchBar from "@/components/jobs/JobSearchBar";
 import JobFilters from "@/components/jobs/JobFilters";
 import JobCard from "@/components/jobs/JobCard";
 import JobFeedback from "@/components/jobs/JobFeedback";
-import AIAssistantWidget from "@/components/jobs/AIAssistantWidget";
+
 
 const JobOffers = () => {
   const [searchQuery, setSearchQuery] = useState("Developer");
@@ -152,8 +152,6 @@ const JobOffers = () => {
       />
 
       <JobFilters filters={quickFilters} />
-
-      <AIAssistantWidget />
 
       {/* Jobs Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
