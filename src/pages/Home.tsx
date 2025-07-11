@@ -87,7 +87,7 @@ const Home = () => {
                   asChild
                 >
                   <Link to="/onboarding/1">
-                    Voir les opportunités
+                    Démarrer l'onboarding
                   </Link>
                 </Button>
               </div>
