@@ -25,7 +25,7 @@ const AIAssistantWidget = () => {
           <CollapsibleTrigger asChild>
             <Button
               variant="outline"
-              className="relative bg-background hover:bg-blue-50 border-2 border-blue-500 text-blue-700 font-medium py-3 px-6 rounded-xl w-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+              className="relative bg-background hover:bg-blue-50 border-2 border-blue-500 text-blue-700 font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
             >
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
