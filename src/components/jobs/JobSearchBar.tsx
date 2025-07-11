@@ -12,7 +12,7 @@ interface JobSearchBarProps {
 const JobSearchBar = ({ searchQuery, setSearchQuery, location, setLocation }: JobSearchBarProps) => {
   return (
     <div className="bg-card border-b">
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex gap-4 items-end">
           <div className="flex-1 max-w-md">
             <div className="relative">
