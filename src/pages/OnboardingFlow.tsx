@@ -126,7 +126,7 @@ const OnboardingFlow = () => {
           <div className="space-y-6">
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-2">Localisation</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-2">Ville</h2>
               <p className="text-muted-foreground">Où souhaitez-vous travailler ?</p>
             </div>
             <div className="space-y-4">
