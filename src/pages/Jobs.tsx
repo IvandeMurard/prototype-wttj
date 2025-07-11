@@ -4,12 +4,11 @@ import JobSearchBar from "@/components/jobs/JobSearchBar";
 import JobFilters from "@/components/jobs/JobFilters";
 import JobCard from "@/components/jobs/JobCard";
 import JobFeedback from "@/components/jobs/JobFeedback";
-import AIAssistant from "@/components/jobs/AIAssistant";
+import AIAssistantWidget from "@/components/jobs/AIAssistantWidget";
 
 const Jobs = () => {
   const [searchQuery, setSearchQuery] = useState("Product Manager senior");
   const [location, setLocation] = useState("France");
-  const [showAIAssistant, setShowAIAssistant] = useState(false);
 
   const quickFilters = [
     { label: "Salaire affiché", count: "12.5K", active: true },
@@ -83,6 +82,8 @@ const Jobs = () => {
 
       <JobFilters filters={quickFilters} />
 
+      <AIAssistantWidget />
+
       {/* Jobs Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,11 +94,6 @@ const Jobs = () => {
 
         <JobFeedback />
       </div>
-
-      <AIAssistant 
-        showAIAssistant={showAIAssistant}
-        setShowAIAssistant={setShowAIAssistant}
-      />
     </div>
   );
 };
