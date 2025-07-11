@@ -19,7 +19,7 @@ const AIAssistantWidget = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6">
+    <div className="max-w-7xl mx-auto px-4 py-2">
       <div className="flex justify-center">
         <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full max-w-lg">
           <CollapsibleTrigger asChild>
@@ -29,7 +29,7 @@ const AIAssistantWidget = () => {
             >
               <div className="flex items-center justify-center space-x-2">
                 <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                <span>Assistant IA - Cliquez pour obtenir de l'aide</span>
+                <span>Un assistant IA vous accompagne</span>
               </div>
               
               {/* Blue halo effect */}
