@@ -12,6 +12,7 @@ import { Modal, ModalContent, ModalHeader, ModalTitle, ModalTrigger } from "@/co
 import { MapPin, Briefcase, TrendingUp, Euro, Home, Globe, Building2, Layers, Code, User, Upload, FileText, ChevronLeft, Pencil } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import InfoButton from "@/components/InfoButton";
 
 interface OnboardingData {
   localisation: string;
@@ -787,6 +788,7 @@ const OnboardingFlow = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
+      <InfoButton />
       
       {/* Header avec progress bar - masqué sur la page de résumé */}
       {currentStep !== 12 && (
