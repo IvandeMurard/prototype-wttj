@@ -24,13 +24,6 @@ const JobFilters = ({ filters }: JobFiltersProps) => {
   return (
     <div className="bg-card border-b">
       <div className="max-w-7xl mx-auto px-4 py-4">
-        {/* Bouton "Tous les filtres" en haut */}
-        <div className="flex justify-end mb-4">
-          <Button variant="outline">
-            <Filter className="h-4 w-4" />
-          </Button>
-        </div>
-        
         <div className="flex flex-wrap gap-3 items-center">
           {filters.map((filter, index) => (
             <div
@@ -45,6 +38,9 @@ const JobFilters = ({ filters }: JobFiltersProps) => {
               </span>
             </div>
           ))}
+          <Button variant="outline" className="ml-auto">
+            <Filter className="h-4 w-4" />
+          </Button>
         </div>
       </div>
     </div>
