@@ -189,12 +189,13 @@ const OnboardingFlow = () => {
 
       case 4: // Salaire
         return (
-          <div className="space-y-6">
+          <div className="space-y-6 relative">
             <div className="text-center mb-8">
               <Icon className="mx-auto h-16 w-16 text-wttj-yellow mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-2">Salaire</h2>
               <p className="text-muted-foreground">Quelles sont vos attentes salariales ?</p>
             </div>
+            
             <div className="space-y-4">
               <Label>Salaire souhaité (brut annuel)</Label>
               <div className="flex gap-2">
@@ -218,6 +219,20 @@ const OnboardingFlow = () => {
                   </SelectContent>
                 </Select>
               </div>
+              
+              {/* Messages informatifs sous le champ */}
+              <div className="space-y-2 text-sm text-muted-foreground mt-4">
+                <p>• Nous ne partageons jamais cela avec les entreprises</p>
+                <p>• Nous l'utilisons uniquement pour filtrer les rôles et vous faire gagner du temps</p>
+                <p>• Si vous n'êtes pas sûr, nous recommandons un montant inférieur pour ne pas exclure de belles opportunités</p>
+              </div>
+            </div>
+
+            {/* Pop-up sur la droite */}
+            <div className="absolute top-0 right-[-300px] w-72 p-4 bg-wttj-yellow/10 border border-wttj-yellow/30 rounded-lg shadow-lg hidden lg:block">
+              <p className="text-sm font-medium text-wttj-yellow-dark">
+                💡 Les femmes gagnent 14% de moins que les hommes à temps égal. Visez plus haut !
+              </p>
             </div>
           </div>
         );
@@ -776,7 +791,7 @@ const OnboardingFlow = () => {
             
             {/* Boutons de navigation */}
             <div className="flex justify-between items-center mt-8 pt-6 border-t border-border">
-              <div>
+              <div className={canSkip ? "flex gap-4" : ""}>
                 {canSkip && (
                   <Button variant="outline" onClick={skipStep} className="border-2 border-black hover:bg-muted">
                     Passer
