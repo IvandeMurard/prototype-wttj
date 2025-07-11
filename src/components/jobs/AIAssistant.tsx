@@ -22,21 +22,34 @@ const AIAssistant = ({ showAIAssistant, setShowAIAssistant }: AIAssistantProps) 
   return (
     <div className="fixed bottom-6 right-6">
       {!showAIAssistant ? (
-        <Button
-          onClick={() => setShowAIAssistant(true)}
-          className="w-20 h-20 rounded-full bg-gradient-to-r from-wttj-yellow via-yellow-400 to-wttj-yellow hover:from-wttj-yellow/90 hover:via-yellow-400/90 hover:to-wttj-yellow/90 text-foreground shadow-2xl border-4 border-white transition-all duration-300 hover:scale-110"
-        >
-          <div className="relative">
-            <svg width="45" height="45" viewBox="0 0 32 32" className="text-black drop-shadow-sm">
-              <path d="M16 2 L20 12 L30 16 L20 20 L16 30 L12 20 L2 16 L12 12 Z" fill="currentColor" />
-              <path d="M24 6 L26 10 L30 12 L26 14 L24 18 L22 14 L18 12 L22 10 Z" fill="currentColor" />
-              <path d="M8 22 L9 24 L11 25 L9 26 L8 28 L7 26 L5 25 L7 24 Z" fill="currentColor" />
-            </svg>
-            {/* Diamants décoratifs en noir */}
-            <div className="absolute -top-1 -left-1 w-3 h-3 bg-black rotate-45 opacity-80"></div>
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black rotate-45 opacity-60"></div>
-          </div>
-        </Button>
+        <div className="relative">
+          {/* Bulle de chat principale */}
+          <Button
+            onClick={() => setShowAIAssistant(true)}
+            className="relative bg-white text-black border-2 border-wttj-yellow shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 p-4 rounded-2xl min-w-[200px]"
+          >
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-full bg-wttj-yellow flex items-center justify-center flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 32 32" className="text-black">
+                  <path d="M16 2 L20 12 L30 16 L20 20 L16 30 L12 20 L2 16 L12 12 Z" fill="currentColor" />
+                  <path d="M24 6 L26 10 L30 12 L26 14 L24 18 L22 14 L18 12 L22 10 Z" fill="currentColor" />
+                  <path d="M8 22 L9 24 L11 25 L9 26 L8 28 L7 26 L5 25 L7 24 Z" fill="currentColor" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <div className="font-semibold text-sm">Assistant IA</div>
+                <div className="text-xs text-muted-foreground">Besoin d'aide ?</div>
+              </div>
+            </div>
+          </Button>
+          
+          {/* Queue de la bulle de chat */}
+          <div className="absolute bottom-2 right-4 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[12px] border-t-white"></div>
+          <div className="absolute bottom-3 right-4 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-wttj-yellow"></div>
+          
+          {/* Indicateur de pulsation */}
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+        </div>
       ) : (
         <Card className="w-96 max-w-[calc(100vw-2rem)] shadow-2xl">
           <CardContent className="p-6">
