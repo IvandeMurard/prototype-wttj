@@ -26,10 +26,10 @@ const InfoButton = () => {
         onClick={() => setIsOpen(true)}
         variant="ghost"
         size="sm"
-        className="fixed top-20 left-6 z-50 w-7 h-7 p-0 rounded-full border border-black/20 bg-background/90 backdrop-blur-sm hover:bg-accent hover:border-black/40 transition-all duration-200"
+        className="fixed top-32 left-6 z-50 w-7 h-7 p-0 rounded-full border border-wttj-yellow/40 bg-wttj-yellow hover:bg-wttj-yellow/80 hover:border-wttj-yellow transition-all duration-200"
         aria-label="Informations sur l'onboarding"
       >
-        <Info className="h-3.5 w-3.5 text-foreground/70" />
+        <Info className="h-3.5 w-3.5 text-black" />
       </Button>
 
       {/* Encart latéral */}
