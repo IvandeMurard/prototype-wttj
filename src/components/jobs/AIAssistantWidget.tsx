@@ -61,7 +61,7 @@ const AIAssistantWidget = () => {
                   <h3 className="text-sm font-semibold text-blue-700 mb-3 text-center">
                     Comment puis-je vous aider ?
                   </h3>
-                  <div className="grid gap-2">
+                  <div className="grid gap-2 max-h-48 overflow-y-auto pr-2 scrollbar-thin scrollbar-track-blue-50 scrollbar-thumb-blue-200">
                     {assistantOptions.map((option, index) => (
                       <Button
                         key={index}
