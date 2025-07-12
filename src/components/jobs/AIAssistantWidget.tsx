@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,24 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 const AIAssistantWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
+  const collapsibleRef = useRef<HTMLDivElement>(null);
+
+  // Fermer l'encart quand on clique en dehors
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (collapsibleRef.current && !collapsibleRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const assistantOptions = [
     "Optimiser ma recherche d'emploi",
@@ -38,7 +56,7 @@ const AIAssistantWidget = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-2">
       <div className="flex justify-center">
-        <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-auto max-w-lg">
+        <Collapsible ref={collapsibleRef} open={isOpen} onOpenChange={setIsOpen} className="w-auto max-w-lg">
           <CollapsibleTrigger asChild>
             <Button
               variant="outline"
