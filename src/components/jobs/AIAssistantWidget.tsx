@@ -55,13 +55,13 @@ const AIAssistantWidget = () => {
           </CollapsibleTrigger>
           
           <CollapsibleContent className="mt-2">
-            <Card className="border-blue-200 shadow-xl">
-              <CardContent className="p-4">
+            <Card className="border-blue-200 shadow-xl max-h-80 overflow-hidden">
+              <CardContent className="p-4 max-h-80 overflow-y-auto">
                 <div className="space-y-2">
                   <h3 className="text-sm font-semibold text-blue-700 mb-3 text-center">
                     Comment puis-je vous aider ?
                   </h3>
-                  <div className="grid gap-2 max-h-48 overflow-y-auto pr-2 scrollbar-thin scrollbar-track-blue-50 scrollbar-thumb-blue-200">
+                  <div className="grid gap-2">
                     {assistantOptions.map((option, index) => (
                       <Button
                         key={index}
