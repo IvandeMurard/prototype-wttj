@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Send } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const AIAssistantWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState("");
 
   const assistantOptions = [
     "Optimiser ma recherche d'emploi",
@@ -16,6 +19,20 @@ const AIAssistantWidget = () => {
     // Handle option selection here
     console.log("Selected option:", option);
     setIsOpen(false);
+  };
+
+  const handleSendMessage = () => {
+    if (message.trim()) {
+      console.log("Message envoyé:", message);
+      // Ici vous pouvez ajouter la logique pour traiter le message
+      setMessage("");
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
   };
 
   return (
@@ -55,8 +72,33 @@ const AIAssistantWidget = () => {
                         <span className="text-sm">{option}</span>
                       </Button>
                     ))}
-                  </div>
-                </div>
+                   </div>
+                   
+                   {/* Séparateur */}
+                   <div className="my-4 border-t border-blue-100"></div>
+                   
+                   {/* Barre de chat */}
+                   <div className="space-y-2">
+                     <p className="text-xs text-blue-600 font-medium">Ou posez-moi directement votre question :</p>
+                     <div className="flex space-x-2">
+                       <Input
+                         placeholder="Tapez votre question..."
+                         value={message}
+                         onChange={(e) => setMessage(e.target.value)}
+                         onKeyPress={handleKeyPress}
+                         className="flex-1 border-blue-200 focus:border-blue-400 focus:ring-blue-200 text-sm"
+                       />
+                       <Button
+                         onClick={handleSendMessage}
+                         disabled={!message.trim()}
+                         size="sm"
+                         className="bg-blue-500 hover:bg-blue-600 text-white px-3"
+                       >
+                         <Send className="h-4 w-4" />
+                       </Button>
+                     </div>
+                   </div>
+                 </div>
               </CardContent>
             </Card>
           </CollapsibleContent>
