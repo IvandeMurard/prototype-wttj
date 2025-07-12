@@ -802,7 +802,7 @@ const OnboardingFlow = () => {
                 </Button>
               )}
               <div className="text-sm text-muted-foreground">
-                Étape {currentStep} sur {TOTAL_STEPS}
+                {Math.round((currentStep / TOTAL_STEPS) * 100)}% terminé
               </div>
             </div>
             <Progress 
