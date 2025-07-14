@@ -52,7 +52,7 @@ const Jobs = () => {
       location: "Nantes",
       type: "Télétravail fréquent",
       salary: "50K à 65K €",
-      image: "/lovable-uploads/cf85496b-1954-495f-998d-db53dbcfcd98.png",
+      image: "/lovable-uploads/dd7ac157-68c0-474e-862b-61afbd49ea7f.png",
       postedDate: "Il y a 16 jours",
       isLiked: false,
       hasApplied: false,
