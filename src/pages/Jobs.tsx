@@ -35,7 +35,7 @@ const Jobs = () => {
     },
     {
       id: 2,
-      title: "Product Owner (F/H)",
+      title: "Product Manager (F/H)",
       company: "Payfit",
       location: "Lyon",
       type: "Télétravail fréquent",
