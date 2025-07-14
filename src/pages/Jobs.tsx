@@ -23,7 +23,7 @@ const Jobs = () => {
     {
       id: 1,
       title: "Product Manager",
-      company: "Pennylane", 
+      company: "pennylane", 
       location: "Paris",
       type: "Télétravail partiel",
       salary: "€50-85k",
@@ -35,8 +35,8 @@ const Jobs = () => {
     },
     {
       id: 2,
-      title: "Product Designer (F/H)",
-      company: "Payfit",
+      title: "Product Owner (F/H)",
+      company: "GROUPE SII",
       location: "Lyon",
       type: "Télétravail fréquent",
       salary: "55K à 70K €",
@@ -47,8 +47,8 @@ const Jobs = () => {
     },
     {
       id: 3,
-      title: "Product Designer",
-      company: "Lucca",
+      title: "Product Designer Senior",
+      company: "CAPGEMINI INVENT",
       location: "Nantes",
       type: "Télétravail fréquent",
       salary: "50K à 65K €",
