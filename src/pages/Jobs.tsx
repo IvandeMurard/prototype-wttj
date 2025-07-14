@@ -7,7 +7,7 @@ import JobFeedback from "@/components/jobs/JobFeedback";
 import AIAssistantWidget from "@/components/jobs/AIAssistantWidget";
 
 const Jobs = () => {
-  const [searchQuery, setSearchQuery] = useState("Product Designer Senior");
+  const [searchQuery, setSearchQuery] = useState("Product Manager senior");
   const [location, setLocation] = useState("France");
 
   const quickFilters = [
@@ -23,7 +23,7 @@ const Jobs = () => {
     {
       id: 1,
       title: "Product Manager",
-      company: "pennylane", 
+      company: "Pennylane", 
       location: "Paris",
       type: "Télétravail partiel",
       salary: "€50-85k",
@@ -35,8 +35,8 @@ const Jobs = () => {
     },
     {
       id: 2,
-      title: "Product Owner (F/H)",
-      company: "GROUPE SII",
+      title: "Product Designer (F/H)",
+      company: "Payfit",
       location: "Lyon",
       type: "Télétravail fréquent",
       salary: "55K à 70K €",
@@ -48,11 +48,11 @@ const Jobs = () => {
     {
       id: 3,
       title: "Product Designer",
-      company: "Payfit",
+      company: "Lucca",
       location: "Nantes",
       type: "Télétravail fréquent",
       salary: "50K à 65K €",
-      image: "/lovable-uploads/dd7ac157-68c0-474e-862b-61afbd49ea7f.png",
+      image: "/lovable-uploads/cf85496b-1954-495f-998d-db53dbcfcd98.png",
       postedDate: "Il y a 16 jours",
       isLiked: false,
       hasApplied: false,
