@@ -18,7 +18,7 @@ const JobSearchBar = ({ searchQuery, setSearchQuery, location, setLocation }: Jo
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
-                placeholder="Recherchez par job, mot-clé ou entreprise"
+                placeholder="Product Designer Senior"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 h-12 border border-black/30"
