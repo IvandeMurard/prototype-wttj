@@ -48,7 +48,7 @@ const Jobs = () => {
     {
       id: 3,
       title: "Product Designer",
-      company: "Lucca",
+      company: "Payfit",
       location: "Nantes",
       type: "Télétravail fréquent",
       salary: "50K à 65K €",
