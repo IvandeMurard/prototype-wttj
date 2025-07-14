@@ -7,7 +7,7 @@ import JobFeedback from "@/components/jobs/JobFeedback";
 import AIAssistantWidget from "@/components/jobs/AIAssistantWidget";
 
 const Jobs = () => {
-  const [searchQuery, setSearchQuery] = useState("Product Manager senior");
+  const [searchQuery, setSearchQuery] = useState("Product Designer senior");
   const [location, setLocation] = useState("France");
 
   const quickFilters = [
