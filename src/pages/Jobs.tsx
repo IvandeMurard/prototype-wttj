@@ -36,7 +36,7 @@ const Jobs = () => {
     {
       id: 2,
       title: "Product Owner (F/H)",
-      company: "GROUPE SII",
+      company: "Payfit",
       location: "Lyon",
       type: "Télétravail fréquent",
       salary: "55K à 70K €",
@@ -48,7 +48,7 @@ const Jobs = () => {
     {
       id: 3,
       title: "Product Designer",
-      company: "CAPGEMINI INVENT",
+      company: "Lucca",
       location: "Nantes",
       type: "Télétravail fréquent",
       salary: "50K à 65K €",
