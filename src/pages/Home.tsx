@@ -59,7 +59,7 @@ const Home = () => {
       </header>
 
       {/* Hero Section with Modal */}
-      <section className="py-4 bg-background relative overflow-hidden">
+      <section className="py-2 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center lg:justify-start">
