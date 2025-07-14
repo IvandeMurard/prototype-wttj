@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import JobSearchBar from "@/components/jobs/JobSearchBar";
 import JobFilters from "@/components/jobs/JobFilters";
 import JobCard from "@/components/jobs/JobCard";
 import JobFeedback from "@/components/jobs/JobFeedback";
+import { Button } from "@/components/ui/button";
 
 
 const JobOffers = () => {
@@ -144,7 +146,21 @@ const JobOffers = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <JobSearchBar 
+      {/* Bandeau jaune */}
+      <div className="bg-wttj-yellow py-4">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-black">
+            Découvrez les offres qui vous correspondent
+          </h1>
+          <Button asChild className="bg-black text-white hover:bg-black/90">
+            <Link to="/onboarding/1">
+              Démarrer l'onboarding
+            </Link>
+          </Button>
+        </div>
+      </div>
+      
+      <JobSearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         location={location}
